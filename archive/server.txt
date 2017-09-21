@@ -1,0 +1,45 @@
+how to connect linux of remote ?
+$ ssh -p 2222 user@host.ip
+$ ssh root@hostip
+
+
+how check the apache that is intalled ?
+$ httpd -v
+$ php -v
+
+
+how to install apache, php, mysql ?
+$ yum -y install mysql mysql-server mysql-devel
+$ yum -y install php php-mysql
+$ yum -y install httpd
+
+$ service mysqld start
+$ service httpd start
+
+
+how to send file/dir form localhost to remote in linux servers ?
+$ scp /var/www/logo.png root@ip_or_domain:/var/www/logo.png
+$ scp -r /var/www/cms/ root@ip_or_domain:/var/www/cms/
+$ scp -r /var/www/cms/ ip_or_domain:/var/www/cms/
+
+
+how to copy/dir file form remote to localhost ?
+$ scp root@ip:/var/www/test.txt /var/www/test.test
+$ scp -r ip:/var/www/cms/ /var/www/cms/
+
+
+how to create a database and user in mysql ?
+$ mysql
+$ create database mydb;
+
+$ create user 'username'@'localhost' identified by 'userpawd';
+$ grant all privileges on mydb.* to username@localhost identified by 'userpawd';
+$ flush privileges;
+
+
+how to execute a sql file ?
+$ mysql
+$ use mydb;
+$ source /var/www/data/1701.sql
+
+

@@ -1,0 +1,35 @@
+
+/* *************** layout *************** */
+#footer { margin: 40px 0; }
+.ui-block-a, .ui-block-c { width: 10%; }
+.ui-block-b { width: 80%; }
+
+/* First breakpoint at 500px */
+@media all and (min-width: 400px){
+	.ui-block-a, .ui-block-c { width: 2%; }
+	.ui-block-b { width: 95%; }
+}
+
+/* Second breakpoint at 800px */
+@media all and (min-width: 800px){
+	.ui-block-a, .ui-block-c { width: 15%; }
+	.ui-block-b { width: 70%; }
+}
+
+
+/* *************** style ************ */
+#header a, #footer a { color: black; }
+#msg { background-color: #9dc7de; }
+
+
+
+.show-list h3 { margin: 0; padding: 0; }
+.show-list p { margin: 5px 0 15px 0; }
+.show-list h3 a { text-decoration: none; color: black; }
+.show-list h3 a:hover { text-decoration: underline; }
+
+.show-list-body { margin-bottom: 11px; }
+
+.show-detail pre img { width: 100%; }
+
+.show-pagination span { margin-right: 5px; }

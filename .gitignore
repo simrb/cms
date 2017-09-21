@@ -1,0 +1,13 @@
+# common ignore file
+*.apk
+*.bak
+*.log
+*.temp
+*.*~
+~*.*
+
+# custom file about this project
+cfg.php
+access.php
+*/upload
+upload/*
