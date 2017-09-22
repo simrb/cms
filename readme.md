@@ -1,27 +1,36 @@
-== About
+About
+============
 
 Just a CMS by php programming language, we dedicate to simplicity and rudeness.
 
 
 
-== Setup
+Setup
+============
 
 install the mysql, php, apache at first, and notice, 
 
-1 enable the short_open_tag=on in php.ini
+1 install the mbstring module
+	# yum -y install php-mbstring
 
-2 $ yum -y install php-mbstring
+2 open the short tag
+	# echo 'short_open_tag=On' > /etc/php.d/custom.ini
 
-3 execute the archive/01rebuildTables.sql file for initailing database
+3 copy config file to root dir
+	# cp archive/cfg_template cfg.php
+	# cp archive/access_template access.php
 
-4 copy the archive/cfg_template,archive/access_template file to project root
-	dir, and modify the _template to .php as file suffix name, edit your
-	dbname, username, password in cfg.php for database connnection.
+4 initialing database
+	# mysql -h localhost -u root < /var/www/html/project/archive/initdb.sql
 
 
 
-== Backup
+Backup
+============
 
 1 backup the dir archive/upload that is stored your upload files.
 
 2 backup your db.
+
+
+
