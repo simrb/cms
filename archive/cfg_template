@@ -5,9 +5,9 @@
 $cfg = array(
 	'def_mode'			=>	'test',		// test or others like devel, production
 	'sql_server'		=>	'localhost',
-	'sql_user' 			=>	'root',
-	'sql_pawd'			=>	'your_password',
-	'sql_dbname'		=>	'cms',
+	'sql_user' 			=>	'cms_user',
+	'sql_pawd'			=>	'cms_pawd',
+	'sql_dbname'		=>	'cms_db',
 
 	'def_access'		=>	'access.php',	// default access file control
 	'def_lang'			=>	'en',
