@@ -25,7 +25,7 @@ install the mysql, php, apache at first, and notice,
 
 4 initialing database
 
-	# mysql -h localhost -u root < /var/www/html/project/archive/initdb.sql
+	# mysql -h localhost -u root < /var/www/html/project_name/archive/00firstInstall.sql
 
 
 

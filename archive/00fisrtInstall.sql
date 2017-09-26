@@ -20,7 +20,6 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Table structure for table `category`
 --
-DROP TABLE IF EXISTS `category`;
 CREATE TABLE `category` (
   `cid` int(11) NOT NULL auto_increment,
   `follow` int(11) NOT NULL default '0',
@@ -43,7 +42,6 @@ INSERT INTO `category` (`cid`, `follow`, `number`, `name`) VALUES
 --
 -- Table structure for table `file`
 --
-DROP TABLE IF EXISTS `file`;
 CREATE TABLE `file` (
   `fid` int(11) NOT NULL auto_increment,
   `uid` int(11) NOT NULL,
@@ -64,7 +62,6 @@ CREATE TABLE `file` (
 --
 -- Table structure for table `record`
 --
-DROP TABLE IF EXISTS `record`;
 CREATE TABLE `record` (
   `rid` int(11) NOT NULL auto_increment,
   `uid` int(11) NOT NULL,
@@ -91,7 +88,6 @@ INSERT INTO `record` (`rid`, `uid`, `cid`, `follow`, `useful`, `content`, `creat
 --
 -- Table structure for table `user`
 --
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `uid` int(11) NOT NULL auto_increment,
   `username` varchar(20) NOT NULL,
@@ -115,7 +111,6 @@ INSERT INTO `user` (`uid`, `username`, `password`, `level`) VALUES
 --
 -- Table structure for table `user_log`
 --
-DROP TABLE IF EXISTS `user_log`;
 CREATE TABLE `user_log` (
   `ulid` int(11) NOT NULL auto_increment,
   `uid` int(11) NOT NULL,
@@ -143,7 +138,6 @@ INSERT INTO `user_log` (`ulid`, `uid`, `ukey`, `uval`) VALUES
 --
 -- Table structure for table `user_status`
 --
-DROP TABLE IF EXISTS `user_status`;
 CREATE TABLE `user_status` (
   `usid` int(11) NOT NULL auto_increment,
   `uid` int(11) NOT NULL,
