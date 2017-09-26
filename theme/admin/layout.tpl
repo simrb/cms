@@ -34,5 +34,10 @@
 		</div>
 
 	</div>
+	<!--[if IE]>
+		<style type="text/css">
+			textarea { width: 95%; }
+		</style>
+	<![endif]-->
 </body>
 </html>
