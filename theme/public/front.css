@@ -18,7 +18,8 @@
 
 
 /* *************** style ************ */
-#header a, #footer a { color: black; }
+body { background-color: #e8ede0; }
+#header a, #bodyer a, #footer a { color: #374b37; }
 #msg { background-color: #9dc7de; }
 
 
