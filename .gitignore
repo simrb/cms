@@ -5,6 +5,7 @@
 *.temp
 *.*~
 ~*.*
+*.swp
 
 # ctags tool
 tags
