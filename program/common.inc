@@ -71,7 +71,9 @@ function l ($str) {
 	if (file_exists($path)) {
 		require $path;
 		if (isset($lang[$str])) {
-			$reval = $lang[$str];
+			if ( $lang[$str] != '' ) {
+				$reval = $lang[$str];
+			}
 		}
 	}
 	return $reval;
