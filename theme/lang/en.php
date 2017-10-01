@@ -45,7 +45,7 @@
 'vague'      =>  '' ,
 'user id'      =>  '' ,
 'follow id'      =>  '' ,
-'useful'      =>  '' ,
+'useful'      =>  'Useful' ,
 'content'      =>  '' ,
 'record count'      =>  '' ,
 'current page'      =>  '' ,
