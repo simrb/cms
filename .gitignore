@@ -14,5 +14,11 @@ cfg.php
 access.php
 */upload
 upload/*
-test.php
-test.tpl
+
+# test file
+t
+t.php
+t.tpl
+tt
+tt.php
+tt.tpl
