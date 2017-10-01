@@ -6,8 +6,13 @@
 *.*~
 ~*.*
 
+# ctags tool
+tags
+
 # custom file about this project
 cfg.php
 access.php
 */upload
 upload/*
+test.php
+test.tpl
