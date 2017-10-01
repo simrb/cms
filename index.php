@@ -10,12 +10,12 @@ define("PATH_BASE",		dirname(__FILE__) . "/");
 
 // absolute path
 define("PATH_PROGRAM",	PATH_BASE . "program/");
-define("PATH_PUBLIC",	PATH_BASE . "theme/public/");
+define("PATH_RES",		PATH_BASE . "theme/res/");
 define("PATH_THEME",	PATH_BASE . "theme/");
 define('PATH_UPLOAD', 	PATH_BASE . 'archive/upload/');
 
 // relative path
-define("DIR_PUBLIC",	"theme/public/");
+define("DIR_RES",		"theme/res/");
 define("DIR_UPLOAD",	"archive/upload/");
 
 

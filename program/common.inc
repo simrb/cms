@@ -20,8 +20,8 @@ function mk_dir($dir, $mode = 0777) {
 
 // return the real path for static resource file, like js, css
 function path_res ($path) {
-	if (file_exists(DIR_PUBLIC.$path)) {
-		$path = DIR_PUBLIC.$path;
+	if (file_exists(DIR_RES.$path)) {
+		$path = DIR_RES.$path;
 	} else {
 		$path = "no file $path";
 	}
