@@ -11,7 +11,7 @@ if ($t['_a'] == "add") {
 			'". user_id() ."', '". $_POST["cid"] ."', '". $_POST["follow"] ."',
 			'". $_POST["useful"] ."', '". $_POST["content"] ."', '". date("Y-m-d H:i:s") ."')"
 		);
-		$t["msg"] = l('added successful');
+		$t["msg"] = l('added successfully');
 	}
 }
 
@@ -40,7 +40,7 @@ if ($t['_a'] == "update") {
 			$t["created"]		=	$row[5];
 
 			$t['_a']			=	"update";
-			$t["msg"] 			= 	l('updated successful');
+			$t["msg"] 			= 	l('updated successfully');
 		}
 	}
 }
@@ -50,7 +50,7 @@ if ($t['_a'] == "update") {
 if ($t['_a'] == "del") {
 	if (isset($_GET["rid"])) {
 		sql_query("DELETE FROM record WHERE rid='". $_GET["rid"] ."';");
-		$t["msg"] = l('deleted successful');
+		$t["msg"] = l('deleted successfully');
 	}
 }
 

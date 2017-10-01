@@ -23,7 +23,7 @@
 	  						echo "<td><a href='?_r=user&&_v=edit&&_a=edit&&uid=".
 	  							$row["uid"]."'>". l('edit') ."</a>  ";
 	  						echo "<a href='?_r=user&&_a=del&&uid=".$row["uid"].
-	  							"'>". l('del') ."</a></td>";
+	  							"'>". l('delete') ."</a></td>";
 	  						echo "</tr>";
 	  					}
 					}

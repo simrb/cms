@@ -86,7 +86,7 @@ if ($t['_a'] == "add") {
 				}  
 
 				if(!move_uploaded_file($file['tmp_name'], PATH_UPLOAD.$path)){
-					$t["msg"] = l('some wrong in remove file');
+					$t["msg"] = l('a error in removing file');
 					break;
 				}
 

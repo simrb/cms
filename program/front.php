@@ -14,7 +14,7 @@ if ($t['_a'] == "add") {
 				'". user_id() ."', '". $_POST["cid"] ."', '". $_POST["rid"] ."',
 				'". $_POST["content"] ."', '". date("Y-m-d H:i:s") ."')"
 			);
-			$t["msg"] = l('submited successfully');
+			$t["msg"] = l('submitted successfully');
 		}
 
 	}

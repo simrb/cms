@@ -55,7 +55,7 @@
 	  						echo "<td><a href='?_r=record&&_v=edit&&_a=edit&&rid=".
 	  							$row["rid"]."'>". l('edit') ."</a>  ";
 	  						echo "<a href='?_r=record&&_a=del&&rid=".
-	  							$row["rid"]."'>". l('del') ."</a></td>";
+	  							$row["rid"]."'>". l('delete') ."</a></td>";
 	  						echo "</tr>";
 	  					}
 					}
