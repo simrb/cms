@@ -11,15 +11,19 @@
 tags
 
 # custom file about this project
-cfg.php
-access.php
+cfg.inc
+access.inc
 */upload
 upload/*
 
 # test file
 t
 t.php
+t.inc
 t.tpl
 tt
 tt.php
+tt.inc
 tt.tpl
+
+
