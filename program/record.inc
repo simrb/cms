@@ -151,6 +151,18 @@ if ($t['_v'] == "show") {
 
 // view: edit
 if ($t['_v'] == "edit") {
+
+	// fetch the rid
+// 	if ( isset($t['rid']) ) { 
+// 		// pass
+// 	} elseif ( isset($_GET['rid']) ) {
+// 		$t['rid'] = $_GET['rid'];
+// 	} elseif ( isset($_POST['rid']) ) {
+// 		$t['rid'] = $_POST['rid'];
+// 	else {
+// 		$t['rid'] = 0;
+// 	}
+
 	$t["rid"]			=	isset($t["rid"]) ? $t["rid"] : 0;
 	$t["uid"]			=	isset($t["uid"]) ? $t["uid"] : user_id();
 	$t["cid"]			=	isset($t["cid"]) ? $t["cid"] : 1;
@@ -164,12 +176,14 @@ if ($t['_v'] == "edit") {
 
 	$t['_a']			=	$t['_a'] == "" ? "add" : $t['_a'];
 
+	$t["rid"]			=	isset($_GET["rid"]) ? $_GET["rid"] : (isset($_POST['rid']) ? $_POST['rid'] : $t['rid']);
+
 	//fetch the data that will be changed later
-	if (isset($_GET["rid"])) {
-		$res = sql_query("SELECT rid,uid,cid,follow,useful,content,created FROM record WHERE rid = '". $_GET["rid"] ."';");
+	if ( $t['rid'] != 0 ) {
+		$res = sql_query("SELECT rid,uid,cid,follow,useful,content,created FROM record WHERE rid = '". $t['rid'] ."';");
 		if ($res) {
 			$row = mysql_fetch_row($res);
-			$t["rid"]			=	$row[0];
+			// $t["rid"]			=	$row[0];
 			$t["uid"]			=	$row[1];
 			$t["cid"]			=	$row[2];
 			$t["follow"]		=	$row[3];

@@ -52,7 +52,7 @@
 	  						echo "<td>" . utf8_substr($row['content'],0,20) . "</td>";
 	  					//	echo "<td>" . $row['created'] . "</td>";
 
-	  						echo "<td><a href='?_r=record&&_v=edit&&_a=edit&&rid=".
+	  						echo "<td><a href='?_r=record&&_v=edit&&rid=".
 	  							$row["rid"]."'>". l('edit') ."</a>  ";
 	  						echo "<a href='?_r=record&&_a=del&&rid=".
 	  							$row["rid"]."'>". l('delete') ."</a></td>";
