@@ -9,6 +9,7 @@ body { text-align:center; }
 /* ------------- color */
 body, #wrap { background-color: #e8ede0; }
 a { color: #53624a; }
+textarea { background-color: #eee; }
 .bgwt { background-color: white; }
 .show-table thead { background: #769b61; }
 #msg { background-color: #9dc7de; }
@@ -54,6 +55,7 @@ tbody tr:hover { background-color: #d4ddc2; }
 
 
 input, select { width: 200px; height: 23px; }
+textarea { width: 95%; }
 input[type="submit"] { width: 150px; height: 23px; }
 .edit-form-login input[type="submit"] {width: 200px; height: 23px;}
 
