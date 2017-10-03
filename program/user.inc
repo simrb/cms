@@ -58,7 +58,7 @@ if ($t['_a'] == "delall") {
 //act: logout
 if ($t['_a'] == "logout") {
 	user_logout();
-	url_to ($GLOBALS["ucfg"]["user_login_page"]);
+	url_to ();
 }
 
 
@@ -67,7 +67,7 @@ if ($t['_a'] == "login") {
 	if (isset($_POST["username"]) and isset($_POST["password"])) {
 		if (user_login($_POST['username'], $_POST['password'])) {
 			// pass
-			url_to();
+			url_to( url_referer() );
 		} else {
 			$t["msg"] = l('failed to login, the username and password is not matched').
 			" <a href='".$GLOBALS["ucfg"]["user_login_page"]."'>". l('return') ."</a>";
@@ -79,6 +79,7 @@ if ($t['_a'] == "login") {
 
 //view: login
 if ($t['_v'] == "login") {
+	url_referer('?');
 	$t['layout'] = 'front/layout';
 	tmp("admin/login", $t);
 }
