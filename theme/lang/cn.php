@@ -65,7 +65,7 @@
 'file count'      =>  '文件 数量' ,
 'about us'      =>  '关于我们' ,
 'say someing ...'      =>  '说些什么吗 ...' ,
-
+'you have login yet'     =>  '你已经登录了' ,
 
 
 );?>

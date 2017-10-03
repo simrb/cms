@@ -66,5 +66,7 @@
 'file count'      =>  '' ,
 'about us'      =>  '' ,
 'say someing ...'      =>  '' ,
+'you have login yet'     =>  '' ,
+
 
 );?>
