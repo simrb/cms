@@ -94,6 +94,21 @@ function url_to ($url = "index.php") {
 }
 
 
+// set or get the http_referer value
+// set it by an argv , get it with no argv given.
+function url_referer ($url = '') {
+	// save 
+	if ( $url != '') {
+		$url_referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : $url ;
+		setcookie("http_referer", $url_referer, time()+60*5);
+
+	} else {
+		return (isset($_COOKIE["http_referer"]) ? $_COOKIE["http_referer"] : '/');
+	}
+
+}
+
+
 function out($str, $t, $layout = 'layout') {
 	$t["msg"] = $str;
 	tmp("blank", $t, $layout);
