@@ -79,9 +79,15 @@ if ($t['_a'] == "login") {
 
 //view: login
 if ($t['_v'] == "login") {
-	url_referer('?');
 	$t['layout'] = 'front/layout';
-	tmp("admin/login", $t);
+	// has login yet
+	if(user_id() > 0){
+		$t['blank'] = l('you have login yet');
+		tmp('blank', $t);
+	} else {
+		url_referer('?');
+		tmp("admin/login", $t);
+	}
 }
 
 
