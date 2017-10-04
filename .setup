@@ -1,0 +1,65 @@
+#!/bin/bash
+
+function getdir(){
+    for element in `ls $1`
+    do  
+        dir_or_file=$1"/"$element
+        if [ -d $dir_or_file ]; then 
+			create_file=${dir_or_file}"/"${my_file}
+			if [ ! -f "$create_file" ]; then
+# 				echo "$create_file"
+ 				touch "$create_file"
+			fi
+
+            getdir $dir_or_file
+        fi  
+    done
+}
+
+if [ ! $1 ]; then
+	echo "please, enter the number what you want. (like, bash tool.sh 1)"
+	echo "1, initailling running environment."
+	echo "2, increarsing the index.html file for each dir."
+	echo "..."
+fi
+
+# create the index.html for each dir
+if [ "$1" = "2" ]; then
+	my_path=$(cd `dirname $0`; pwd)
+	my_file="index.html"
+	getdir $my_path
+fi
+
+# initail installed environment
+if [ "$1" = "1" ]; then
+
+	# install the php-mbstring
+	my_file="/etc/php.d/mbstring.ini"
+	if [ ! -f "$my_file" ] ; then
+		yum -y install php-mbstring
+	fi
+
+	my_file="/etc/php.d/custom.ini"
+	if [ ! -f "$my_file" ] ; then
+		echo 'short_open_tag=On' > $my_file
+		echo "${my_file} is created"
+	fi
+
+	# copy the cfg.inc and access.inc
+	my_file="cfg.incc"
+	if [ ! -f "$my_file" ] ; then
+		cp "./archive/cfg_template"  $my_file
+		echo "${my_file} is created"
+	fi
+
+	my_file="access.incc"
+	if [ ! -f "$my_file" ] ; then
+		cp "./archive/access_template"  $my_file
+		echo "${my_file} is created"
+	fi
+
+fi
+
+
+
+
