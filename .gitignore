@@ -15,6 +15,7 @@ cfg.inc
 access.inc
 */upload
 upload/*
+index.html
 
 # test file
 t
@@ -25,5 +26,15 @@ tt
 tt.php
 tt.inc
 tt.tpl
+tt
+ttt.php
+ttt.inc
+ttt.tpl
+test
+test.php
+test.inc
+test.tpl
+
+
 
 
