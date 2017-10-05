@@ -67,6 +67,7 @@
 'about us'      =>  '' ,
 'say someing ...'      =>  '' ,
 'you have login yet'     =>  '' ,
+'no privilege to access'     =>  '' ,
 
 
 );?>
