@@ -2,61 +2,64 @@
 
 
 // filter all of sql injections
-$_REQUEST	= sql_filter($_REQUEST);
 $_GET 		= sql_filter($_GET);
 $_POST		= sql_filter($_POST);
+$_REQUEST	= sql_filter($_REQUEST);
 
 
 // set the default program file, view ,act
 $_r = $t['_r'] = isset($_GET["_r"]) ? $_GET["_r"] : $t["def_r"];
-$_v = $t['_v'] = isset($_GET["_v"]) ? $_GET["_v"] : $t['def_v'];
 $_a = $t['_a'] = isset($_GET["_a"]) ? $_GET["_a"] : $t['def_a'];
+$_v = $t['_v'] = isset($_GET["_v"]) ? $_GET["_v"] : $t['def_v'];
 
 
-
-// user role have admin, edit, view
-if ($_r == 'admin') {
-
-	// base edit control
-	if (	$_a == "add" 
-		or $_a == "update" 
-		or $_a == "del" 
-		or $_a == "delall" 
-		or $_v == "edit" ) {
-
-		if (user_level() > 5) {
-			// pass
-		} else {
-			out("no power to edit for current user", $t);
+switch ($_r) {
+	case 'admin':
+	case 'category':
+	case 'file':
+	case 'record':
+		if (user_level() < 3) {
+			out(l("no privilege to access"), $t);
 		}
+		break;
 
-		if ($r1 == "user") {
-			if (user_level() == 9) {
-				// pass
-			} else {
-				out("no power to edit for current user", $t);
+	case 'user':
+		// user login
+		if (($_v == "login") or ($_a == "login") or ($_a == "logout")) {
+			// pass
+
+		} else {
+			if (user_level() < 9) {
+				out(l("no privilege to access"), $t);
 			}
 		}
-	}
+		break;
 
-	// access control
-	if (($_r == "user") and (($_v == "login") or ($_a == "login"))) {
-		// pass
-
-	} else {
-/*		if (user_level() < 2 ) {
-			//out("当前帐号没有访问权限。", $t);
-			out("当前帐号没有访问权限。", $t);
-		}*/
-		
-		// need to user login
-		user_is_login();
-
-
-	}
-
+	default:
 }
 
+switch ($_a) {
+	case 'add':
+	case 'edit':
+	case 'del':
+	case 'delall':
+	case 'update':
+		if (user_level() < 6) {
+			out(l("no privilege to access"), $t);
+		}
+		break;
+	default:
+}
+
+switch ($_v) {
+	case 'info':
+	case 'edit':
+		if (user_level() < 6) {
+			out(l("no privilege to access"), $t);
+		}
+		break;
+	default:
+}
 
 
 ?>
