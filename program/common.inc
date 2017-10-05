@@ -360,7 +360,7 @@ function user_allow_submit () {
 	if (user_log('last_post_ip') == user_ip()) {
 		// time
 		if (abs(intval(date("i")) - intval(user_log('last_post_time'))) < 2) {
-			$reval = l("you cannot post twice in a short time");
+			$reval = l('you cannot post twice in a short time');
 		}
 	} else {
 		user_log_set('last_post_ip', user_ip());

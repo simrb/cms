@@ -68,6 +68,8 @@
 'say someing ...'      =>  '' ,
 'you have login yet'     =>  '' ,
 'no privilege to access'     =>  '' ,
-
+'you cannot post twice in a short time' => '',
+'category name'      =>  '' ,
+'number'      =>  '' ,
 
 );?>

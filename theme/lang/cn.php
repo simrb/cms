@@ -67,6 +67,8 @@
 'say someing ...'      =>  '说些什么吗 ...' ,
 'you have login yet'     =>  '你已经登录了' ,
 'no privilege to access'     =>  '没有权限访问' ,
-
+'you cannot post twice in a short time' => '在短时间内你不能连接发两次',
+'category name'      =>  '分类名称' ,
+'number'      =>  '数量' ,
 
 );?>

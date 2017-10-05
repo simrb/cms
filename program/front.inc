@@ -2,7 +2,7 @@
 
 
 //act: add
-if ($t['_a'] == "add") {
+if ($t['_a'] == "addcomment") {
 	if (isset($_POST['rid']) and isset($_POST['content'])) {
 		
 		$t["msg"] = user_allow_submit();
@@ -54,9 +54,7 @@ if ($t['_v'] == "show") {
 if ($t['_v'] == "detail") {
 	if (isset($_GET['rid'])) {
 		$t["rid"]			= $_GET['rid'];
-		$t['url']			= '?_v=detail&&rid=' . $t['rid'] . '&&_a=add';
-		//$t['_a']			= "";
-		//$t['_v']			= "";
+		$t['url']			= '?_v=detail&&rid=' . $t['rid'] . '&&_a=addcomment';
 
 		// web head 
 		$res = sql_query("SELECT content, cid FROM record WHERE rid = ". $t["rid"] . " LIMIT 1");
