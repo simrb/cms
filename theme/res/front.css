@@ -1,6 +1,7 @@
 
 /* *************** layout *************** */
 #footer { margin: 40px 0; }
+textarea { width: 95%; }
 .ui-block-a, .ui-block-c { width: 10%; }
 .ui-block-b { width: 80%; }
 
@@ -17,11 +18,10 @@
 }
 
 
-/* *************** style ************ */
+/* *************** style, color ************ */
 body { background-color: #e8ede0; }
 #header a, #bodyer a, #footer a { color: #374b37; }
 #msg { background-color: #9dc7de; }
-
 
 
 .show-list h3 { margin: 0; padding: 0; }
