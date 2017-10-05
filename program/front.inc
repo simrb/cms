@@ -75,22 +75,5 @@ if ($t['_v'] == "detail") {
 	}
 }
 
-/*
-
-
-//view: test
-
-if ($t['_v'] == "test") {
-
-	$str = "This is a picture [img]149379929010.png[/img] , here.";
-	$str2 = show_bbcodes($str);
-
-	print_r($str);
-	print_r('</br></br>');
-	print_r($str2);
-}
-
-
-*/
 
 ?>
