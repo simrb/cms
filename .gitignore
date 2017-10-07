@@ -12,9 +12,13 @@
 tags
 
 # custom file about this project
-cfg.inc
-access.inc
+cfg.php
+access.php
 */upload
 upload/*
 
-
+# test file
+t
+tt
+ttt
+t.php
