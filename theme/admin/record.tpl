@@ -43,18 +43,18 @@
 
 
 							echo "<tr>";
-							echo "<td>" . $row['rid'] . "</td>";
+	  						echo "<td><a title='".l('edit')."' href='?_r=record&&_v=edit&&rid=".
+	  							$row["rid"]."'># ". $row["rid"] ."</a></td>";
 							echo "<td>" . $row['uid'] . "</td>";
 							echo "<td>" . $category . "</td>";
 							//echo "<td>" . $level . "</td>";
 	  						echo "<td>" . $row['follow'] . "</td>";
 	  						echo "<td>" . $row['useful'] . "</td>";
-	  						echo "<td>" . utf8_substr($row['content'],0,20) . "</td>";
+	  						echo "<td><a href='?_v=detail&&rid=". $row["rid"]. 
+								"' target='_blank'>" . utf8_substr($row['content'],0,20) . "</a></td>";
 	  					//	echo "<td>" . $row['created'] . "</td>";
 
-	  						echo "<td><a href='?_r=record&&_v=edit&&rid=".
-	  							$row["rid"]."'>". l('edit') ."</a>  ";
-	  						echo "<a href='?_r=record&&_a=del&&rid=".
+	  						echo "<td><a href='?_r=record&&_a=del&&rid=".
 	  							$row["rid"]."'>". l('delete') ."</a></td>";
 	  						echo "</tr>";
 	  					}

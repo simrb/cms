@@ -18,12 +18,12 @@
 					if ($t["category_res"]) {
 						while($row = mysql_fetch_array($t["category_res"])) {
 							echo "<tr>";
-							echo "<td>" . $row['cid'] . "</td>";
+	  						echo "<td><a href='?_r=category&&_v=edit&&_a=edit&&cid=".
+									$row["cid"]."'># ". $row["cid"] ."</a></td>";
 	  						echo "<td>" . $row['name'] . "</td>";
 	  						echo "<td>" . $row['follow'] . "</td>";
 	  						echo "<td>" . $row['number'] . "</td>";
-	  						echo "<td><a href='?_r=category&&_v=edit&&_a=edit&&cid=".$row["cid"]."'>". l('edit') ."</a>  ";
-	  						echo "<a href='?_r=category&&_a=del&&cid=".
+	  						echo "<td><a href='?_r=category&&_a=del&&cid=".
 	  							$row["cid"]."'>". l('delete') ."</a></td>";
 	  						echo "</tr>";
 	  					}

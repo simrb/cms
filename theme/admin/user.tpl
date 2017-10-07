@@ -4,9 +4,9 @@
 		<table>
 			<thead>
 				<tr>
-					<th style="width:180px">id</th>
-					<th style="width:180px"><?= l('name'); ?></th>
-					<th style="width:180px"><?= l('level'); ?></th>
+					<th style="width:80px">id</th>
+					<th style="width:80px"><?= l('name'); ?></th>
+					<th style="width:80px"><?= l('level'); ?></th>
 					<th style="width:80px"></th>
 				</tr>
 			</thead>
@@ -17,12 +17,11 @@
 					if ($t["user_res"]) {
 						while($row = mysql_fetch_array($t["user_res"])) {
 							echo "<tr>";
-							echo "<td>" . $row['uid'] . "</td>";
+	  						echo "<td><a href='?_r=user&&_v=edit&&_a=edit&&uid=".
+	  							$row["uid"]."'># ". $row["uid"] ."</a></td>";
 	  						echo "<td>" . $row['username'] . "</td>";
 	  						echo "<td>" . $row['level'] . "</td>";
-	  						echo "<td><a href='?_r=user&&_v=edit&&_a=edit&&uid=".
-	  							$row["uid"]."'>". l('edit') ."</a>  ";
-	  						echo "<a href='?_r=user&&_a=del&&uid=".$row["uid"].
+	  						echo "<td><a href='?_r=user&&_a=del&&uid=".$row["uid"].
 	  							"'>". l('delete') ."</a></td>";
 	  						echo "</tr>";
 	  					}
