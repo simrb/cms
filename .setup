@@ -67,14 +67,14 @@ if [ "$1" = "1" ]; then
 		echo "${my_file} is created"
 	fi
 
-	# copy the cfg.inc and access.inc
-	my_file="cfg.incc"
+	# copy the cfg.php and access.php
+	my_file="cfg.php"
 	if [ ! -f "$my_file" ] ; then
 		cp "./archive/cfg_template"  $my_file
 		echo "${my_file} is created"
 	fi
 
-	my_file="access.incc"
+	my_file="access.php"
 	if [ ! -f "$my_file" ] ; then
 		cp "./archive/access_template"  $my_file
 		echo "${my_file} is created"

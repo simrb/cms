@@ -9,7 +9,7 @@ $cfg = array(
 	'sql_pawd'			=>	'cms_pawd',
 	'sql_dbname'		=>	'cms_db',
 
-	'def_access'		=>	'access.inc',	// default access file control
+	'def_access'		=>	'access.php',	// default access file control
 	'def_lang'			=>	'en',
 	'def_pagesize'		=>	20,
 );

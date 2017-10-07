@@ -20,12 +20,12 @@ define("DIR_UPLOAD",	"archive/upload/");
 
 
 // config, common func, access file
-require_once(PATH_BASE 	. "cfg.inc");
-require_once(PATH_PROGRAM . "common.inc");
+require_once(PATH_BASE 	. "cfg.php");
+require_once(PATH_PROGRAM . "common.php");
 require_once(PATH_BASE 	. $cfg['def_access']);
 
 // index file
-require_once(PATH_PROGRAM . "$_r.inc");
+require_once(PATH_PROGRAM . "$_r.php");
 
 exit;
 ?>

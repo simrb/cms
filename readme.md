@@ -20,8 +20,8 @@ install the mysql, php, apache at first, and notice,
 
 3 copy config file to root dir
 
-	# cp archive/cfg_template cfg.inc
-	# cp archive/access_template access.inc
+	# cp archive/cfg_template cfg.php
+	# cp archive/access_template access.php
 
 4 initialing database
 
