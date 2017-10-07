@@ -7,8 +7,8 @@ function getdir(){
         if [ -d $dir_or_file ]; then 
 			create_file=${dir_or_file}"/"${my_file}
 			if [ ! -f "$create_file" ]; then
-# 				echo "$create_file"
  				touch "$create_file"
+ 				echo "$create_file"
 			fi
 
             getdir $dir_or_file
