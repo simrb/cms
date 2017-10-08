@@ -168,7 +168,7 @@ if ($t['_v'] == "edit") {
 	$t["cid"]			=	isset($t["cid"]) ? $t["cid"] : 1;
 	$t["follow"]		=	isset($t["follow"]) ? $t["follow"] : 0;
 	$t["useful"]		=	isset($t["useful"]) ? $t["useful"] : 0;
-	$t["content"]		=	isset($t["content"]) ? $t["content"] : " ";
+	$t["content"]		=	isset($t["content"]) ? $t["content"] : "";
 
 	$t["category_kv"]	=	data_fetch_kv("category", "cid", "name");
 //	$t["status_kv"]		=	data_fetch_kv("status", "sid", "name");
