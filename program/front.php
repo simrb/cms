@@ -21,7 +21,7 @@ if ($t['_a'] == "addcomment") {
 }
 
 
-//view: list, show
+//view: show
 if ($t['_v'] == "show") {
 
 	// pagination
@@ -75,5 +75,20 @@ if ($t['_v'] == "detail") {
 	}
 }
 
+
+//view: addpost
+if ($t['_v'] == "addpost") {
+
+	// pagination
+	$t['_v'] 			=	"addpost";
+	$t['_a'] 			=	"addpost";
+	$t["url"] 			=	"";
+	$t["cid"]			=	isset($_GET["cid"]) ? $_GET["cid"] : 0 ;
+	$t["category_kv"]	=	data_fetch_kv("category", "cid", "name");
+
+	$t['web_title'] 	= 	user_log('web_title');
+	
+	tmp("front/add", $t);
+}
 
 ?>
