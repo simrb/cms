@@ -3,15 +3,16 @@
 
 // global config
 $cfg = array(
-	'def_mode'			=>	'test',		// test or others like devel, production
 	'sql_server'		=>	'localhost',
 	'sql_user' 			=>	'cms_user',
 	'sql_pawd'			=>	'cms_pawd',
 	'sql_dbname'		=>	'cms_db',
 
+	'def_mode'			=>	'test',		// test or others like devel, production
 	'def_access'		=>	'access.php',	// default access file control
 	'def_lang'			=>	'en',
 	'def_pagesize'		=>	20,
+	'version'			=>	'1.0.0',
 );
 
 
