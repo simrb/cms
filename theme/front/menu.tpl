@@ -2,21 +2,18 @@
 
 	// define the menu
 	$layout = array(
-		'front_menu' 	=>	array(
 
+		'front_menu' 	=>	array(
 			array(
 				'name'	=>	'genenal',
 				'link'	=>	'?cid=1',
+				'hl'	=>	'1',
 			),
 			array(
 				'name'	=>	'talk',
 				'link'	=>	'?cid=2',
+				'hl'	=>	'2',
 			),
-			array(
-				'name'	=>	'add post',
-				'link'	=>	'?_v=addpost',
-			),
-
 		),
 
 	);
@@ -25,9 +22,16 @@
 	if (isset($layout['front_menu'])) {
 
 		echo '<div class="menu_item"><ul>';
+
 		foreach ($layout['front_menu'] as $row) {
-			echo '<li><a target="_self" href="'. $row['link'] .'" >'. $row['name'] .'</a></li>';
+			$hl = ($row['hl'] == $t['cid']) ? 'menu_hl' : '';
+			echo '<li class="left '. $hl .'"><a href="'. 
+				$row['link'] .'" >'. $row['name'] .'</a></li>';
 		}
+
+		echo '<li class="right"><a href="?_v=addpost&&cid='.
+			$t['cid'] .'">'.l('add post').'</a></li>';
+
 		echo '</ul></div>';
 	}
 

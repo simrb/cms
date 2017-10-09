@@ -70,5 +70,6 @@
 'you cannot post twice in a short time' => '在短时间内你不能连接发两次',
 'category name'      =>  '分类名称' ,
 'number'      =>  '数量' ,
+'add post'      =>  '发帖' ,
 
 );?>

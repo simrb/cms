@@ -22,6 +22,7 @@ textarea { width: 95%; }
 body { background-color: #e8ede0; }
 #header a, #bodyer a, #footer a { color: #374b37; }
 #msg { background-color: #9dc7de; }
+.menu_item .menu_hl { background-color: #b4bdb4; }
 
 
 .show-list h3 { margin: 0; padding: 0; }
@@ -36,4 +37,4 @@ body { background-color: #e8ede0; }
 .show-pagination span { margin-right: 5px; }
 
 .show-menu { height: 33px; }
-.show-menu ul li { float: left; margin-right: 10px; }
+.show-menu ul li { margin-right: 10px; }
