@@ -36,4 +36,4 @@ body { background-color: #e8ede0; }
 .show-pagination span { margin-right: 5px; }
 
 .show-menu { height: 33px; }
-.show-menu ul li { float: left; margin-right: 10px; }
+.show-menu ul li { margin-right: 10px; }

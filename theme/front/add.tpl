@@ -2,8 +2,7 @@
 		<form action="?_v=<?= $t['_v'] ?>&&_a=<?= $t['_a'] ?>" method="post" >
 			<ul>
 				<li><label><?= l('content'); ?></label></li>
-				<li><textarea name="content" class="record_text file_input" ><?= $t['content'] ?></textarea></li>
-
+				<li><textarea name="content" class="record_text file_input" </textarea></li>
 				<li>
 
 					<?php
