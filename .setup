@@ -23,20 +23,27 @@ if [ ! `whoami` = "root" ];then
 fi
 
 if [ ! $1 ]; then
-	echo "please, enter the number what you want. (like, bash tool.sh 1)"
-	echo "1, initailling running environment. (httpd, mysql, php)"
-	echo "2, increarsing the index.html file for each dir."
+	echo "================================================================"
+	echo "typing the number what you want. (For example, # bash tool.sh 1)"
+	echo "1, initialling the project environment."
+	echo "2, initialling the database."
+	echo "3, increarsing the index.html file for each directory."
 	echo "..."
 fi
 
 # create the index.html for each dir
-if [ "$1" = "2" ]; then
+if [ "$1" = "3" ]; then
 	my_path=$(cd `dirname $0`; pwd)
 	my_file="index.html"
 	getdir $my_path
 fi
 
-# initail installed environment
+# initial database
+if [ "$1" = "2" ]; then
+	mysql -h localhost -u root < pwd"/archive/00firstInstall.sql"
+fi
+
+# initial running environment of server
 if [ "$1" = "1" ]; then
 
 	my_file="/usr/sbin/httpd"
