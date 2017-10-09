@@ -79,7 +79,7 @@ if ($t['_a'] == "login") {
 
 //view: login
 if ($t['_v'] == "login") {
-	$t['layout'] = 'front/layout';
+	$t['layout'] = 'layout';
 	// has login yet
 	if(user_id() > 0){
 		$t['blank'] = l('you have login yet');
