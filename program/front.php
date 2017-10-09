@@ -26,7 +26,7 @@ if ($t['_v'] == "show") {
 
 	// pagination
 	$t["url"] 			=	"";
-	$t["cid"]			=	isset($_GET["cid"]) ? $_GET["cid"] : 0 ;
+	$t["cid"]			=	isset($_GET["cid"]) ? $_GET["cid"] : 1 ;
 	$pagecurr			=	(isset($_GET["pagecurr"]) and $_GET["pagecurr"]>1) ? $_GET["pagecurr"] : 1 ;
 	$pagesize			=	9 ;
 	$pagenums			=	0 ;
@@ -83,7 +83,7 @@ if ($t['_v'] == "addpost") {
 	$t['_v'] 			=	"addpost";
 	$t['_a'] 			=	"addpost";
 	$t["url"] 			=	"";
-	$t["cid"]			=	isset($_GET["cid"]) ? $_GET["cid"] : 0 ;
+	$t["cid"]			=	isset($_GET["cid"]) ? $_GET["cid"] : 1 ;
 	//$t["category_kv"]	=	data_fetch_kv("category", "cid", "name");
 
 	$t['web_title'] 	= 	user_log('web_title');
