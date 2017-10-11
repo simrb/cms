@@ -47,11 +47,8 @@
 		if ($t["pagenums"] > 0) {
 			for ($i=0; $i < $t["pagenums"]; $i++) {
 				$j = $i + 1;
-				echo "<span> <a href='?_r=front&&pagecurr=$j&&".$t["url"];
-				if ($t["cid"] > 0) {
-					echo "&&cid=".$t["cid"];
-				}
-				echo "'>$j</a> </span>";
+				echo '<span> <a href="?_r=front&&pagecurr='.$j.'&&cid='.$t['cid'];
+				echo '">'.$j.'</a> </span>';
 			}
 		}
 

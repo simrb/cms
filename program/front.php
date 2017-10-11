@@ -1,5 +1,6 @@
 <?php defined('ACCESS') or die('Access denied');
 
+$t["category_kv"] =	data_fetch_kv("category", "cid", "name");
 
 //act: add
 if ($t['_a'] == "addcomment") {
@@ -84,7 +85,6 @@ if ($t['_v'] == "addpost") {
 	$t['_a'] 			=	"addpost";
 	$t["url"] 			=	"";
 	$t["cid"]			=	isset($_GET["cid"]) ? $_GET["cid"] : 1 ;
-	//$t["category_kv"]	=	data_fetch_kv("category", "cid", "name");
 
 	$t['web_title'] 	= 	user_log('web_title');
 	
