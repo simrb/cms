@@ -64,13 +64,13 @@ if ($t['_a'] == "logout") {
 
 //act: login
 if ($t['_a'] == "login") {
+	// default msg
+	$t["msg"] = l('failed to login, the username and password is not matched').
+		" <a href='".$GLOBALS["ucfg"]["user_login_page"]."'>". l('return') ."</a>";
+
 	if (isset($_POST["username"]) and isset($_POST["password"])) {
 		if (user_login($_POST['username'], $_POST['password'])) {
-			// pass
-			url_to( url_referer() );
-		} else {
-			$t["msg"] = l('failed to login, the username and password is not matched').
-			" <a href='".$GLOBALS["ucfg"]["user_login_page"]."'>". l('return') ."</a>";
+			url_to(url_referer());
 		}
 	}
 	out($t["msg"], $t);
