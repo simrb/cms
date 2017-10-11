@@ -19,7 +19,9 @@
 							echo "<tr>";
 	  						echo "<td><a href='?_r=user&&_v=edit&&_a=edit&&uid=".
 	  							$row["uid"]."'># ". $row["uid"] ."</a></td>";
-	  						echo "<td>" . $row['username'] . "</td>";
+	  						echo "<td><a href='?_r=user&&_v=edit&&_a=edit&&uid=".
+	  							$row["uid"]."'>". $row["username"] ."</a></td>";
+	  					//	echo "<td>" . $row['username'] . "</td>";
 	  						echo "<td>" . $row['level'] . "</td>";
 	  						echo "<td><a href='?_r=user&&_a=del&&uid=".$row["uid"].
 	  							"'>". l('delete') ."</a></td>";

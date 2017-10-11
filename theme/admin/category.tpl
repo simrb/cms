@@ -20,7 +20,9 @@
 							echo "<tr>";
 	  						echo "<td><a href='?_r=category&&_v=edit&&_a=edit&&cid=".
 									$row["cid"]."'># ". $row["cid"] ."</a></td>";
-	  						echo "<td>" . $row['name'] . "</td>";
+	  						echo "<td><a href='?_r=category&&_v=edit&&_a=edit&&cid=".
+									$row["cid"]."'>". $row["name"] ."</a></td>";
+	  					//	echo "<td>" . $row['name'] . "</td>";
 	  						echo "<td>" . $row['follow'] . "</td>";
 	  						echo "<td>" . $row['number'] . "</td>";
 	  						echo "<td><a href='?_r=category&&_a=del&&cid=".
