@@ -2,6 +2,7 @@
 
 $t["category_kv"] =	data_fetch_kv("category", "cid", "name");
 
+
 //act: add
 if ($t['_a'] == "addcomment") {
 	if (isset($_POST['rid']) and isset($_POST['content'])) {
@@ -19,6 +20,28 @@ if ($t['_a'] == "addcomment") {
 		}
 
 	}
+}
+
+
+//act: addpost
+if ($t['_a'] == "addpost") {
+	if (isset($_POST['cid']) and isset($_POST['content'])) {
+		
+		$t["msg"] = user_allow_submit();
+		if ($t["msg"] == '') {
+			sql_query(
+				"INSERT INTO record (
+				uid, cid, follow, content, created
+				) VALUES (
+				'". user_id() ."', '". $_POST["cid"] ."', 0,
+				'". $_POST["content"] ."', '". date("Y-m-d H:i:s") ."')"
+			);
+			$t["msg"] = l('submitted successfully');
+		}
+
+	}
+
+	url_to( '?cid='. $_POST["cid"]);
 }
 
 
@@ -80,10 +103,8 @@ if ($t['_v'] == "detail") {
 //view: addpost
 if ($t['_v'] == "addpost") {
 
-	// pagination
-	$t['_v'] 			=	"addpost";
-	$t['_a'] 			=	"addpost";
 	$t["url"] 			=	"";
+	$t['_a'] 			=	"addpost";
 	$t["cid"]			=	isset($_GET["cid"]) ? $_GET["cid"] : 1 ;
 
 	$t['web_title'] 	= 	user_log('web_title');
