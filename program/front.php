@@ -28,7 +28,10 @@ if ($t['_a'] == "addpost") {
 	if (isset($_POST['cid']) and isset($_POST['content'])) {
 		
 		$t["msg"] = user_allow_submit();
+
 		if ($t["msg"] == '') {
+
+			// insert record
 			sql_query(
 				"INSERT INTO record (
 				uid, cid, follow, content, created
@@ -37,6 +40,11 @@ if ($t['_a'] == "addpost") {
 				'". $_POST["content"] ."', '". date("Y-m-d H:i:s") ."')"
 			);
 			$t["msg"] = l('submitted successfully');
+
+			// add upload
+			if ( ) {
+			}
+
 		}
 
 	}
