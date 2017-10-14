@@ -129,7 +129,7 @@ function data_fetch_kv($tablename, $key, $val) {
 
 
 // fetch a data collection from db
-function sql_query($sql) {
+function sql_query($sql, $returnid = 0) {
 
 	$link 	= mysql_connect($GLOBALS['cfg']['sql_server'], $GLOBALS['cfg']['sql_user'], $GLOBALS['cfg']['sql_pawd']) 
 		or die("Could not connect: " . mysql_error());
@@ -139,6 +139,10 @@ function sql_query($sql) {
 
 	$result = mysql_query($sql) 
 		or die("Could not query: " . mysql_error());
+	
+	if ($returnid != 0) {
+		$result = mysql_insert_id();
+	}
 
 	mysql_close($link);
 
