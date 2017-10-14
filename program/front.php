@@ -33,12 +33,12 @@ if ($t['_a'] == "addpost") {
 		if ($t["msg"] == '') {
 
 			// add record
-			sql_query(
+			$insert_id = sql_query(
 				"INSERT INTO record (
 				uid, cid, follow, content, created
 				) VALUES (
 				'". user_id() ."', '". $_POST["cid"] ."', 0,
-				'". $_POST["content"] ."', '". date("Y-m-d H:i:s") ."')"
+				'". $_POST["content"] ."', '". date("Y-m-d H:i:s") ."')", 1
 			);
 			$t["msg"] = l('submitted successfully');
 
@@ -48,7 +48,7 @@ if ($t['_a'] == "addpost") {
 			require_once('file.php');
 
 			// add upload log for record
-			$rid	= 1;
+			$rid	= $insert_id;
 			sql_query("INSERT INTO record_log (rid, ukey, uval) VALUES ('". $rid .
 				"', 'img', '". $path ."');");
 
