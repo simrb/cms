@@ -45,7 +45,7 @@ if ($t['_a'] == 'ajax_file_list') {
 }
 
 
-//act: add
+// act: add
 if ($t['_a'] == "add") {
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -60,10 +60,10 @@ if ($t['_a'] == "add") {
 		$imgpreview 		= 1;      		//是否生成预览图(1为生成,其他为不生成);  
 		$imgpreviewsize		= 1/2;    		//缩略图比例  
 
-		//print_r(get_upload_files());
-		//exit;
+// 		print_r(get_upload_files());
+// 		exit;
 		foreach (get_upload_files() as $key => $file) {
-			//exit(print_r($file));
+// 			exit(print_r($file));
 
 			if ($file['name']) {
 				$name 	= substr($file['name'], 0, strrpos($file['name'], '.'));
@@ -107,7 +107,7 @@ if ($t['_a'] == "add") {
 }
 
 
-//act: delete
+// act: delete
 if ($t['_a'] == "del") {
 	if (isset($_GET["fid"])) {
 		// remove file
@@ -122,7 +122,7 @@ if ($t['_a'] == "del") {
 }
 
 
-//view: show
+// view: show
 if ($t['_v'] == "show") {
 
 	// pagination
@@ -151,7 +151,7 @@ if ($t['_v'] == "show") {
 }
 
 
-//view: edit
+// view: edit
 if ($t['_v'] == "edit") {
 	tmp("admin/file", $t);
 }
@@ -163,12 +163,13 @@ function ajax_json ($data) {
 }
 
 
+// return the file with an index array
 function get_upload_files () {
     foreach($_FILES as $file) {
         $num = count($file['name']);
 
         if ($num == 1) {
-            $files = $file;
+            $files[] = $file;
         } else {
             for ($i=0; $i < $num; $i++) { 
                 $files[$i]['name']		=	$file['name'][$i];
