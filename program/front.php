@@ -47,12 +47,16 @@ if ($t['_a'] == "addpost") {
 			$t['_v'] = '';
 			require_once('file.php');
 
-			echo $t['msg'];
+			// add upload log for record
+			$rid	= 1;
+			sql_query("INSERT INTO record_log (rid, ukey, uval) VALUES ('". $rid .
+				"', 'img', '". $path ."');");
+
 		}
 
 	}
 
-// 	url_to( '?cid='. $_POST["cid"]);
+	url_to( '?cid='. $_POST["cid"]);
 }
 
 
