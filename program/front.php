@@ -27,11 +27,12 @@ if ($t['_a'] == "addcomment") {
 if ($t['_a'] == "addpost") {
 	if (isset($_POST['cid']) and isset($_POST['content'])) {
 		
-		$t["msg"] = user_allow_submit();
+// 		$t["msg"] = user_allow_submit();
+		$t['msg'] = '';
 
 		if ($t["msg"] == '') {
 
-			// insert record
+			// add record
 			sql_query(
 				"INSERT INTO record (
 				uid, cid, follow, content, created
@@ -42,14 +43,16 @@ if ($t['_a'] == "addpost") {
 			$t["msg"] = l('submitted successfully');
 
 			// add upload
-			if ( ) {
-			}
+			$t['_a'] = 'add';
+			$t['_v'] = '';
+			require_once('file.php');
 
+			echo $t['msg'];
 		}
 
 	}
 
-	url_to( '?cid='. $_POST["cid"]);
+// 	url_to( '?cid='. $_POST["cid"]);
 }
 
 
