@@ -13,7 +13,8 @@ Step 1, enter to project directory, and then
 	# su
 	# bash .setup 1
 
-Step 2, initialing database, if you have not existed database, the following command that will create a default database called `cms_db` for you. or you need a anthor database name of new, configure the `cfg.php` and `archive/00initDB.sql` for parameters `cms_db`,`cms_user`,`cms_pawd` as you want.
+Step 2, initialing database, if you have not existed database, the following command that will create a default database called `cms_db` for you. 
+or you need another database name of new, configure the `cfg.php` and `archive/00initDB.sql` for parameters `cms_db`,`cms_user`,`cms_pawd` as you want.
 
 	# bash .setup 2
 
