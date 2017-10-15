@@ -8,31 +8,30 @@ Just a CMS by php programming language, we dedicate to simplicity and rudeness.
 Setup
 ============
 
-enter to project directory, and then
+Step 1, enter to project directory, and then
 
 	# su
 	# bash .setup 1
 
-initialing database, if you have not existed database, this is command that will create a default database called `cms_db` for you
+Step 2, initialing database, if you have not existed database, this is a command that will create a default database called `cms_db` for you
 
 	# bash .setup 2
 
-if you have a database, just open the `cfg.php`, `archive/02addRecordLog.sql`,`archive/00fisrtInstall.sql`, change the parameters `cms_db`, `cms_user`, `cms_pawd`, and then
+if you have a database, just open those files `cfg.php`, `archive/00initDB.sql`, change the parameters `cms_db`, `cms_user`, `cms_pawd`, and then
 
-	# mysql -h localhost < 00fisrtInstall.sql
-	# mysql -h localhost < 02addRecordLog.sql
+	# mysql -h localhost < archive/00initDB.sql
 
 
 
 Backup
 ============
 
-1 backup the dir archive/upload, such as
+1 backup the directory archive/upload, such as
 
 	# cp archive/upload ~/upload_bak
 
-2 backup your db, such as
+2 backup your database, such as
 
-	# mysqldump --database cms_db > mydb.sql
+	# mysqldump --database cms_db > mydb_bak.sql
 
 

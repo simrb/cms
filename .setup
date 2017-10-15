@@ -40,8 +40,7 @@ fi
 
 # initial database
 if [ "$1" = "2" ]; then
-	mysql -h localhost -u root < pwd"/archive/00firstInstall.sql"
-	mysql -h localhost -u root < pwd"/archive/02addRecordLog.sql"
+	mysql -h localhost -u root < pwd"/archive/00initDB.sql"
 fi
 
 # initial running environment of server
