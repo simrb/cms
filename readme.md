@@ -8,32 +8,31 @@ Just a CMS by php programming language, we dedicate to simplicity and rudeness.
 Setup
 ============
 
-install the mysql, php, apache at first, and notice, 
+enter to project directory, and then
 
-1 install the mbstring module
+	# su
+	# bash .setup 1
 
-	# yum -y install php-mbstring
+initialing database, if you haven`t existed database, this is command that will create a default database called `cms_db` for you
 
-2 open the short tag
+	# bash .setup 2
 
-	# echo 'short_open_tag=On' > /etc/php.d/custom.ini
+if you have a database, just open the `cfg.php`, `archive/02addRecordLog.sql`,`archive/00fisrtInstall.sql`, change the parameters `cms_db`, `cms_user`, `cms_pawd`, and then
 
-3 copy config file to root dir
-
-	# cp archive/cfg_template cfg.php
-	# cp archive/access_template access.php
-
-4 initialing database
-
-	# mysql -h localhost -u root < /var/www/html/project_name/archive/00firstInstall.sql
+	# mysql -h localhost < 00fisrtInstall.sql
+	# mysql -h localhost < 02addRecordLog.sql
 
 
 
 Backup
 ============
 
-1 backup the dir archive/upload that is stored your upload files.
+1 backup the dir archive/upload, such as
 
-2 backup your db.
+	# cp archive/upload ~/upload_bak
+
+2 backup your db, such as
+
+	# mysqldump --database cms_db > mydb.sql
 
 
