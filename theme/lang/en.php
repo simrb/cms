@@ -72,5 +72,6 @@
 'category name'      =>  '' ,
 'number'      =>  '' ,
 'add post'      =>  '' ,
+'no content in here'      =>  '' ,
 
 );?>
