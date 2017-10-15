@@ -34,6 +34,7 @@ body { background-color: #e8ede0; }
 .show-list-body { margin-bottom: 11px; }
 
 .show-detail pre img { width: 100%; }
+.show-detail .show-detail-img { margin-bottom: 10px; }
 
 .show-pagination span { margin-right: 5px; }
 
