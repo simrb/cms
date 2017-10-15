@@ -13,7 +13,7 @@ enter to project directory, and then
 	# su
 	# bash .setup 1
 
-initialing database, if you haven`t existed database, this is command that will create a default database called `cms_db` for you
+initialing database, if you have not existed database, this is command that will create a default database called `cms_db` for you
 
 	# bash .setup 2
 
