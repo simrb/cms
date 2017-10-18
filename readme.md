@@ -8,18 +8,16 @@ Just a CMS by php programming language, we dedicate to simplicity and rudeness.
 Setup
 ============
 
-Step 1, enter to project directory, and then
+initialing the project environment and database by default database, username, userpawd
 
 	# su
-	# bash .setup 1
+	# sh .setup -ed
 
-Step 2, initialing database, if you have not existed database, the following command that will create a default database called `cms_db` for you. 
+or, set your custom by options `-h, -n, -u, -p`
 
-or you need another database name of new, configure the `cfg.php` and `archive/00initDB.sql` for parameters `cms_db`,`cms_user`,`cms_pawd` as you want.
+	# sh .setup -ed -n db_name -u username -p password
 
-	# bash .setup 2
-
-if you have a database, just configure the file `cfg.php` for connecting.
+if you have an existed database, just configure the file `cfg.php` for connecting.
 
 
 
@@ -28,7 +26,7 @@ Backup
 
 1 backup the dir archive/upload, such as
 
-	# cp archive/upload ~/upload_bak
+	# cp -r archive/upload ~/upload_bak
 
 2 backup your db, such as
 
