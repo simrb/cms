@@ -1,50 +1,92 @@
 #!/bin/bash
 
+Uhost="localhost"
+Udata="cms_db"$RANDOM
+Uname="cms_u"$RANDOM
+Upawd="cms_p"$RANDOM
+Uinitpj="no"
+Uinitdb="no"
+Uinitht="no"
+
+while getopts "h:n:u:p:edi" opt
+do
+	case $opt in
+		 h)
+		 	Uhost=$OPTARG;;
+		 n)
+		 	Udata=$OPTARG;;
+		 u)
+		 	Uname=$OPTARG;;
+		 p)
+		 	Upawd=$OPTARG;;
+		 e)
+		 	Uinitpj="yes";;
+		 d)
+		 	Uinitdb="yes";;
+		 i)
+		 	Uinitht="yes";;
+		 ?)
+			echo "unkonw option"
+			exit 1
+			;;
+	esac
+done
+
+Urepstr="s/localost/$Uhost/g;s/cms_db/$Udata/g;s/cms_user/$Uname/g;s/cms_pawd/$Upawd/g"
+
 function getdir(){
     for element in `ls $1`
     do  
         dir_or_file=$1"/"$element
-        if [ -d $dir_or_file ]; then 
+        if [ -d $dir_or_file ] ; then 
 			create_file=${dir_or_file}"/"${my_file}
-			if [ ! -f "$create_file" ]; then
+			if [ ! -f "$create_file" ] ; then
  				touch "$create_file"
  				echo "$create_file"
 			fi
-
             getdir $dir_or_file
         fi  
     done
 }
 
 # need root to run this script
-if [ ! `whoami` = "root" ];then
+if [ ! `whoami` = "root" ] ; then
 	echo "Running the file must be root user"
 	exit;
 fi
 
 if [ ! $1 ]; then
 	echo "================================================================"
-	echo "typing the number what you want. (For example, # bash tool.sh 1)"
-	echo "1, initialling the project environment."
-	echo "2, initialling the database."
-	echo "3, increarsing the index.html file for each directory."
+	echo "typing the option as what you want. "
+	echo "-e, initialling the project environment."
+	echo "-d, initialling the database."
+	echo "    -h, hostname"
+	echo "    -n, database"
+	echo "    -u, username"
+	echo "    -p, password"
+	echo "-i, increarsing the index.html file for each directory."
 	echo "..."
 fi
 
 # create the index.html for each dir
-if [ "$1" = "3" ]; then
+if [ $Uinitht = "yes" ] ; then
+	echo "initialing index page for each directory."
 	my_path=$(cd `dirname $0`; pwd)
 	my_file="index.html"
 	getdir $my_path
 fi
 
 # initial database
-if [ "$1" = "2" ]; then
-	mysql -h localhost -u root < pwd"/archive/00initDB.sql"
+if [ $Uinitdb = "yes" ] ; then
+	echo "initialing database with -h$Uhost, -n$Udata, -u$Uname, -p$Upawd."
+	sed $Urepstr "archive/00initDB.sql" > "initdb.t"
+ 	mysql -h localhost -u root < "initdb.t"
+ 	rm -f "initdb.t"
 fi
 
 # initial running environment of server
-if [ "$1" = "1" ]; then
+if [ $Uinitpj = "yes" ] ; then
+	echo "initialing project environment."
 
 	my_file="/usr/sbin/httpd"
 	if [ ! -f "$my_file" ] ; then
@@ -77,14 +119,21 @@ if [ "$1" = "1" ]; then
 	# copy the cfg.php and access.php
 	my_file="cfg.php"
 	if [ ! -f "$my_file" ] ; then
-		cp "./archive/cfg_template"  $my_file
-		echo "${my_file} is created"
+		sed $Urepstr "archive/cfg_template" > $my_file
+		echo "file ${my_file} is created"
 	fi
 
 	my_file="access.php"
 	if [ ! -f "$my_file" ] ; then
-		cp "./archive/access_template"  $my_file
-		echo "${my_file} is created"
+		sed $Urepstr "archive/access_template" > $my_file
+		echo "file ${my_file} is created"
+	fi
+
+	my_dir="archive/upload"
+	if [ ! -d "$my_dir" ] ; then
+		mkdir $my_dir
+		chmod 777 $my_dir
+		echo "dir ${my_dir} is created"
 	fi
 
 fi

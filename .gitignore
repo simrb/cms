@@ -1,8 +1,9 @@
-# common ignore file
+# common ignored file
 *.apk
 *.bak
 *.log
 *.temp
+*.tmp
 *.*~
 ~*.*
 *.swp
@@ -18,7 +19,7 @@ access.php
 upload/*
 
 # test file
-t
-tt
-ttt
+*.t
+*.tt
+t.tpl
 t.php

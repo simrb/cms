@@ -3,7 +3,7 @@ $t['layout'] = 'admin/layout';
 
 // initail upload folder if it hasn`t existed
 if(!is_dir(PATH_UPLOAD)) {
-    mkdir(PATH_UPLOAD, 0777, true);
+    exit('no file '. PATH_UPLOAD);
 }
 
 // act: ajax, get the search tip
