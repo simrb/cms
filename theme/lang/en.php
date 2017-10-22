@@ -73,5 +73,8 @@
 'number'      =>  '' ,
 'add post'      =>  '' ,
 'no content in here'      =>  '' ,
+'see'      =>  '' ,
+
+
 
 );?>

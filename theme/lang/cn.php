@@ -72,5 +72,8 @@
 'number'      =>  '数量' ,
 'add post'      =>  '发帖' ,
 'no content in here'      =>  '亲，这儿没有内容哦' ,
+'see'      =>  '查看' ,
+
+
 
 );?>
