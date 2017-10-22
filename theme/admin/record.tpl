@@ -43,8 +43,12 @@
 
 
 							echo "<tr>";
-	  						echo "<td><a title='".l('edit')."' href='?_r=record&&_v=edit&&rid=".
-	  							$row["rid"]."'># ". $row["rid"] ."</a></td>";
+
+	  						echo "<td><a href='?_v=detail&&rid=". $row["rid"]. 
+								"' target='_blank'> # </a>";
+	  						echo "<a href='?_r=record&&_v=edit&&rid=".
+	  							$row["rid"]."'> ". $row["rid"] ."</a></td>";
+
 							echo "<td>" . $row['uid'] . "</td>";
 							echo "<td>" . $category . "</td>";
 							//echo "<td>" . $level . "</td>";
@@ -59,8 +63,12 @@
 
 	  					//	echo "<td>" . $row['created'] . "</td>";
 
-	  						echo "<td><a href='?_r=record&&_a=del&&rid=".
-	  							$row["rid"]."'>". l('delete') ."</a></td>";
+	  						echo "<td><a href='?_v=detail&&rid=". $row["rid"]. 
+								"' target='_blank'>". l('see') ."</a>";
+	  						//	echo "<td><a href='?_r=record&&_v=edit&&rid=".
+	  						//	$row["rid"]."'>". l('edit') ."</a></td>";
+	  					//	echo "<td><a href='?_r=record&&_a=del&&rid=".
+	  					//		$row["rid"]."'>". l('delete') ."</a></td>";
 	  						echo "</tr>";
 	  					}
 					}
@@ -154,7 +162,13 @@
 						<label><?= l('useful'); ?></label>
 						<input type="text" name="useful" class="w50" value="<?= $t['useful'] ?>" />
 					</li>
+					<li>
+	  					<a href="?_r=record&&_a=del&&rid=<?=$t['rid']; ?>">
+							<button > <?= l('delete'); ?> </button>
+						</a>
+					</li>
 				</ul>
+
 			</div>
 			
 			
