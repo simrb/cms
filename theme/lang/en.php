@@ -71,5 +71,8 @@
 'you cannot post twice in a short time' => '',
 'category name'      =>  '' ,
 'number'      =>  '' ,
+'see'      =>  '' ,
+
+
 
 );?>
