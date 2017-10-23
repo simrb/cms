@@ -15,12 +15,12 @@
 
 				<li><label><?= l('default title'); ?></label></li>
 				<li>
-					<input type="text" name="web_title" value="<?= $t["web_title"] ?>" />
+					<input class="w100" type="text" name="web_title" value="<?= $t["web_title"] ?>" />
 				</li>
 
 				<li><label><?= l('website description'); ?></label></li>
 				<li>
-					<input type="text" name="web_des" value="<?= $t["web_des"] ?>" />
+					<input class="w100" type="text" name="web_des" value="<?= $t["web_des"] ?>" />
 				</li>
 
 				<li>

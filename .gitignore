@@ -17,6 +17,7 @@ cfg.php
 access.php
 */upload
 upload/*
+test/*
 
 # test file
 *.t

@@ -18,7 +18,7 @@
 						while($row = mysql_fetch_array($t["user_res"])) {
 							echo "<tr>";
 	  						echo "<td><a href='?_r=user&&_v=edit&&_a=edit&&uid=".
-	  							$row["uid"]."'># ". $row["uid"] ."</a></td>";
+	  							$row["uid"]."'>". $row["uid"] ." > </a></td>";
 	  						echo "<td><a href='?_r=user&&_v=edit&&_a=edit&&uid=".
 	  							$row["uid"]."'>". $row["username"] ."</a></td>";
 	  					//	echo "<td>" . $row['username'] . "</td>";

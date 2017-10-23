@@ -1,6 +1,7 @@
 <?php $lang = array(
 
 
+'operated successfully'      =>  '' ,
 'added successfully'      =>  '' ,
 'failed to add'      =>  '' ,
 'updated successfully'      =>  '' ,
@@ -74,6 +75,7 @@
 'add post'      =>  '' ,
 'no content in here'      =>  '' ,
 'see'      =>  '' ,
+'keepit'      =>  'trash' ,
 
 
 
