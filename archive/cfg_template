@@ -8,7 +8,7 @@ $cfg = array(
 	'sql_pawd'			=>	'cms_pawd',
 	'sql_dbname'		=>	'cms_db',
 
-	'def_mode'			=>	'test',		// test or others like devel, production
+	'def_mode'			=>	'normal',		// test or others like devel, production
 	'def_access'		=>	'access.php',	// default access file control
 	'def_lang'			=>	'en',
 	'def_pagesize'		=>	20,
@@ -30,7 +30,7 @@ $t = array(
 	'web_des'			=>	'',
 	'web_kw'			=>	'',
 	'web_logo' 			=>	"",
-	'web_footer'		=>	"Copyleft © 2017",
+	'web_footer'		=>	"Copyleft © 2016-2017",
 );
 
 
@@ -53,5 +53,10 @@ $ucfg = array(
 							),
 );
 
+
+if ($t['def_mode'] == 'test') {
+	ini_set("display_errors", "On");
+	error_reporting(E_ALL | E_STRICT);
+}
 
 ?>
