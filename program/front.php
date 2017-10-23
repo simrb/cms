@@ -33,7 +33,7 @@ if ($t['_v'] == "show") {
 	$pagestart			=	($pagecurr - 1)*$pagesize ;
 	$filenums			=	0;
 
-	$sql_str			= 	"SELECT * FROM record WHERE follow = 0";
+	$sql_str			= 	"SELECT * FROM record WHERE cid != 0 and follow = 0";
 	$sql_str			.=	$t["cid"] > 0 ? (" and cid = ". $t["cid"]) : "";
 	$res 				= 	sql_query($sql_str);
 	$filenums 			= 	mysql_num_rows($res);
