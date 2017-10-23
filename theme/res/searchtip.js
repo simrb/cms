@@ -2,7 +2,7 @@
     search tip for dropmenu, for example 
     mySearchTip("drop-menu-div-id", "search-input-id", "url_str", "drop-menu-div-class-name")
     like, 
-    mySearchTip("auto_div", "search_input", '?_m=record&&act=ajax&field=snum&kw=', "autodropmenu");
+    mySearchTip("auto_div", "search_input", '?_m=record&act=ajax&field=snum&kw=', "autodropmenu");
 */
 
 var highlightindex = -1;

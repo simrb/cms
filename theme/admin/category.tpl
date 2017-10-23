@@ -18,14 +18,14 @@
 					if ($t["category_res"]) {
 						while($row = mysql_fetch_array($t["category_res"])) {
 							echo "<tr>";
-	  						echo "<td><a href='?_r=category&&_v=edit&&_a=edit&&cid=".
+	  						echo "<td><a href='?_r=category&_v=edit&_a=edit&cid=".
 									$row["cid"]."'>". $row["cid"] ." > </a></td>";
-	  						echo "<td><a href='?_r=category&&_v=edit&&_a=edit&&cid=".
+	  						echo "<td><a href='?_r=category&_v=edit&_a=edit&cid=".
 									$row["cid"]."'>". $row["name"] ."</a></td>";
 	  					//	echo "<td>" . $row['name'] . "</td>";
 	  						echo "<td>" . $row['follow'] . "</td>";
 	  						echo "<td>" . $row['number'] . "</td>";
-	  						echo "<td><a href='?_r=category&&_a=del&&cid=".
+	  						echo "<td><a href='?_r=category&_a=del&cid=".
 	  							$row["cid"]."'>". l('delete') ."</a></td>";
 	  						echo "</tr>";
 	  					}
@@ -38,7 +38,7 @@
 
 	<div class="show-bar">
 		<form class="edit-form">
-			<a href="?_r=category&&_v=edit"><input type="button" value="<?= l('add'); ?>" class="bgwt" /></a>
+			<a href="?_r=category&_v=edit"><input type="button" value="<?= l('add'); ?>" class="bgwt" /></a>
 		</form>
 	</div>
 
@@ -49,7 +49,7 @@
 <?php if ($t['_v'] == 'edit') { ?>
 
 	<div class="edit-form">
-		<form action="?_r=category&&_v=<?= $t["_v"] ?>&&_a=<?= $t["_a"] ?>" method="post">
+		<form action="?_r=category&_v=<?= $t["_v"] ?>&_a=<?= $t["_a"] ?>" method="post">
 			<ul>
 
 				<li><label><?= l("category name"); ?></label></li>

@@ -1,5 +1,5 @@
 <div class="edit-form edit-form-login">
-	<form action="?_r=user&&_a=login" method="post">
+	<form action="?_r=user&_a=login" method="post">
 		<ul>
 
 			<li><label><?= l('user login'); ?></label></li>

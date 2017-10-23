@@ -54,7 +54,7 @@ if ($t['_v'] == "show") {
 if ($t['_v'] == "detail") {
 	if (isset($_GET['rid'])) {
 		$t["rid"]			= $_GET['rid'];
-		$t['url']			= '?_v=detail&&rid=' . $t['rid'] . '&&_a=addcomment';
+		$t['url']			= '?_v=detail&rid=' . $t['rid'] . '&_a=addcomment';
 
 		// web head 
 		$res = sql_query("SELECT content, cid FROM record WHERE rid = ". $t["rid"] . " LIMIT 1");

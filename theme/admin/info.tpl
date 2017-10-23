@@ -1,6 +1,6 @@
 
 	<div class="edit-form">
-		<form action="?_r=admin&&_v=info&&_a=edit" method="post">
+		<form action="?_r=admin&_v=info&_a=edit" method="post">
 			<ul>
 
 				<li><label><?= l('logo picture'); ?></label></li>

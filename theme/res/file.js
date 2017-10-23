@@ -19,12 +19,12 @@ function file_load(pagecurr) {
 
     // load the content of file list
     var file_list_html      = "";
-    var file_list_url       = "?_r=file&&_a=ajax_file_list";
+    var file_list_url       = "?_r=file&_a=ajax_file_list";
     var upload_file_path    = "archive/upload/";
     var pagecurr            = pagecurr;
 
     $.ajax({
-        url: (file_list_url + "&&pagecurr=" + pagecurr),  
+        url: (file_list_url + "&pagecurr=" + pagecurr),  
         data: {},
         type: 'get',
         cache: false,
