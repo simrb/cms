@@ -45,9 +45,10 @@
 							echo "<tr>";
 
 	  						echo "<td><a href='?_v=detail&&rid=". $row["rid"]. 
-								"' target='_blank'> # </a>";
+								"' target='_blank'> > </a>";
+	  						echo "<span>". $row["rid"] ."</span>";
 	  						echo "<a href='?_r=record&&_v=edit&&rid=".
-	  							$row["rid"]."'> ". $row["rid"] ."</a></td>";
+	  							$row["rid"]."'> > </a></td>";
 
 							echo "<td>" . $row['uid'] . "</td>";
 							echo "<td>" . $category . "</td>";
@@ -69,6 +70,7 @@
 	  						//	$row["rid"]."'>". l('edit') ."</a></td>";
 	  					//	echo "<td><a href='?_r=record&&_a=del&&rid=".
 	  					//		$row["rid"]."'>". l('delete') ."</a></td>";
+
 	  						echo "</tr>";
 	  					}
 					}
@@ -163,6 +165,9 @@
 						<input type="text" name="useful" class="w50" value="<?= $t['useful'] ?>" />
 					</li>
 					<li>
+	  					<a href="?_r=record&&_a=keepit&&rid=<?=$t['rid']; ?>">
+							<button > <?= l('keepit'); ?> </button>
+						</a>
 	  					<a href="?_r=record&&_a=del&&rid=<?=$t['rid']; ?>">
 							<button > <?= l('delete'); ?> </button>
 						</a>

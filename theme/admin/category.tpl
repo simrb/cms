@@ -19,7 +19,7 @@
 						while($row = mysql_fetch_array($t["category_res"])) {
 							echo "<tr>";
 	  						echo "<td><a href='?_r=category&&_v=edit&&_a=edit&&cid=".
-									$row["cid"]."'># ". $row["cid"] ."</a></td>";
+									$row["cid"]."'>". $row["cid"] ." > </a></td>";
 	  						echo "<td><a href='?_r=category&&_v=edit&&_a=edit&&cid=".
 									$row["cid"]."'>". $row["name"] ."</a></td>";
 	  					//	echo "<td>" . $row['name'] . "</td>";
