@@ -3,6 +3,7 @@ body { font-family: "Trebuchet MS", sans-serif; font-size:15px; }
 .left { float: left; }
 .right { float: right; }
 .clear { clear: both; }
+.w100 { width: 100%; }
 body, div, p, form, ul  { margin: 0; padding: 0; }
 .mr10 { margin: 10px; }
 .hide { display: none; }
