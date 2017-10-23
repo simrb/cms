@@ -1,6 +1,7 @@
 <?php $lang = array(
 
 
+'operated successfully'      =>  '' ,
 'added successfully'      =>  '' ,
 'failed to add'      =>  '' ,
 'updated successfully'      =>  '' ,
@@ -72,6 +73,7 @@
 'category name'      =>  '' ,
 'number'      =>  '' ,
 'see'      =>  '' ,
+'keepit'      =>  'trash' ,
 
 
 

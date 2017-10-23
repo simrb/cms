@@ -1,6 +1,7 @@
 <?php $lang = array(
 
 
+'operated successfully'      =>  '操作成功' ,
 'added successfully'      =>  '添加成功' ,
 'failed to add'      =>  '添加失败' ,
 'updated successfully'      =>  '更新成功' ,
@@ -71,6 +72,8 @@
 'category name'      =>  '分类名称' ,
 'number'      =>  '数量' ,
 'see'      =>  '查看' ,
+//'keepit'      =>  '暂存' ,
+'keepit'      =>  '回收站' ,
 
 
 
