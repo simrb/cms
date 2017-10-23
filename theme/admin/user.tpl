@@ -17,13 +17,13 @@
 					if ($t["user_res"]) {
 						while($row = mysql_fetch_array($t["user_res"])) {
 							echo "<tr>";
-	  						echo "<td><a href='?_r=user&&_v=edit&&_a=edit&&uid=".
+	  						echo "<td><a href='?_r=user&_v=edit&_a=edit&uid=".
 	  							$row["uid"]."'>". $row["uid"] ." > </a></td>";
-	  						echo "<td><a href='?_r=user&&_v=edit&&_a=edit&&uid=".
+	  						echo "<td><a href='?_r=user&_v=edit&_a=edit&uid=".
 	  							$row["uid"]."'>". $row["username"] ."</a></td>";
 	  					//	echo "<td>" . $row['username'] . "</td>";
 	  						echo "<td>" . $row['level'] . "</td>";
-	  						echo "<td><a href='?_r=user&&_a=del&&uid=".$row["uid"].
+	  						echo "<td><a href='?_r=user&_a=del&uid=".$row["uid"].
 	  							"'>". l('delete') ."</a></td>";
 	  						echo "</tr>";
 	  					}
@@ -39,7 +39,7 @@
 
 	<div class="show-bar">
 		<form class="edit-form">
-			<a href="?_r=user&&_v=edit"><input type="button" value="<?= l('add'); ?>" class="bgwt" /></a>
+			<a href="?_r=user&_v=edit"><input type="button" value="<?= l('add'); ?>" class="bgwt" /></a>
 		</form>
 	</div>
 
@@ -54,7 +54,7 @@
 
 
 	<div class="edit-form">
-		<form action="?_r=user&&_v=<?= $t['_v'] ?>&&_a=<?= $t['_a'] ?>" method="post">
+		<form action="?_r=user&_v=<?= $t['_v'] ?>&_a=<?= $t['_a'] ?>" method="post">
 			<ul>
 
 				<li><label><?= l('username'); ?></label></li>

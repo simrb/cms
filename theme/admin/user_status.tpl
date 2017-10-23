@@ -20,8 +20,8 @@
   						echo "<td>" . $row['token'] . "</td>";
   						echo "<td>" . $row['created'] . "</td>";
   						echo "<td>" . $row['exptime'] . "</td>";
-/*  						echo "<td><a href='?_m=user&&view=edit&&act=edit&&uid=".$row["usid"]."'>编辑</a>  ";
-  						echo "<a href='?_m=user&&act=del&&uid=".$row["uid"]."'>删除</a></td>";*/
+/*  						echo "<td><a href='?_m=user&view=edit&act=edit&uid=".$row["usid"]."'>编辑</a>  ";
+  						echo "<a href='?_m=user&act=del&uid=".$row["uid"]."'>删除</a></td>";*/
   						echo "</tr>";
   					}
 				}
@@ -36,6 +36,6 @@
 
 <div class="show-bar">
 	<form class="edit-form">
-		<a href="?_r=user&&_v=status&&_a=delall"><input type="button" value="<?= l('clear all'); ?>" class="bgwt" /></a>
+		<a href="?_r=user&_v=status&_a=delall"><input type="button" value="<?= l('clear all'); ?>" class="bgwt" /></a>
 	</form>
 </div>

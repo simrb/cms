@@ -129,7 +129,7 @@ if ($t['_v'] == "show") {
 			if ($t["record_num"] < 1) {
 				$t["msg"] 	= l('no result in quering');
 			} else {
-				$t["url"] 	= "_a=query&&select_kw=$select_kw_name&&select_field=$select_field&&select_type=$select_type";
+				$t["url"] 	= "_a=query&select_kw=$select_kw_name&select_field=$select_field&select_type=$select_type";
 			}
 		} else {
 			// no content in db for the sepcail field

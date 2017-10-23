@@ -93,8 +93,9 @@ if ($t['_v'] == "show") {
 //view: detail
 if ($t['_v'] == "detail") {
 	if (isset($_GET['rid'])) {
-		$t["rid"]		= $_GET['rid'];
-		$t['url']		= '?_v=detail&&rid=' . $t['rid'] . '&&_a=addcomment';
+
+		$t["rid"]			= $_GET['rid'];
+		$t['url']			= '?_v=detail&rid=' . $t['rid'] . '&_a=addcomment';
 
 		$res = sql_query("SELECT content, cid, created, useful FROM record WHERE rid = ". $t["rid"] . " LIMIT 1");
 		if ($res = mysql_fetch_row($res)) {

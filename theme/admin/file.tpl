@@ -24,7 +24,7 @@
 	  						echo "<td>" . $row['name'] . "</td>";
 	  						echo "<td>" . $row['path'] . "</td>";
 	  						echo "<td>" . $row['created'] . "</td>";
-	  						echo "<td><a href='?_r=file&&_a=del&&fid=".
+	  						echo "<td><a href='?_r=file&_a=del&fid=".
 	  								$row["fid"]."'>". l('delete') ."</a></td>";
 	  						echo "</tr>";
 	  					}
@@ -39,7 +39,7 @@
 				if ($t["pagenums"] > 0) {
 					for ($i=0; $i < $t["pagenums"]; $i++) {
 						$j = $i + 1;
-						echo "<span> <a href='?_r=file&&pagecurr=$j&&".$t["url"];
+						echo "<span> <a href='?_r=file&pagecurr=$j&".$t["url"];
 						echo "'>$j</a> </span>";
 					}
 				}
@@ -55,7 +55,7 @@
 
 	<div class="show-bar">
 		<form class="edit-form">
-			<a href="?_r=file&&_v=edit"><input type="button" value="<?= l('add'); ?>" class="bgwt" /></a>
+			<a href="?_r=file&_v=edit"><input type="button" value="<?= l('add'); ?>" class="bgwt" /></a>
 		</form>
 	</div>
 
@@ -66,7 +66,7 @@
 
 	<div class="edit-form">
 
-		<form name="upload" action="?_r=file&&_v=edit&&_a=add" enctype="multipart/form-data" method="post">
+		<form name="upload" action="?_r=file&_v=edit&_a=add" enctype="multipart/form-data" method="post">
 			<ul>
 				<li><input type="file" name="files[]"></li>
 				<li><input type="file" name="files[]"></li>

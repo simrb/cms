@@ -1,7 +1,7 @@
 <?php if ($t['_v'] == 'show') { ?>
 
 	<div class="show-query">
-		<form action="?_r=record&&_a=query" method="post">
+		<form action="?_r=record&_a=query" method="post">
 
 			<input type="search" class="search" name="select_kw" placeholder="<?= l('keyword'); ?>" />
 			<input type="submit" class="" value="<?= l('query'); ?>" />
@@ -44,10 +44,10 @@
 
 							echo "<tr>";
 
-	  						echo "<td><a href='?_v=detail&&rid=". $row["rid"]. 
+	  						echo "<td><a href='?_v=detail&rid=". $row["rid"]. 
 								"' target='_blank'> > </a>";
 	  						echo "<span>". $row["rid"] ."</span>";
-	  						echo "<a href='?_r=record&&_v=edit&&rid=".
+	  						echo "<a href='?_r=record&_v=edit&rid=".
 	  							$row["rid"]."'> > </a></td>";
 
 							echo "<td>" . $row['uid'] . "</td>";
@@ -56,19 +56,19 @@
 	  						echo "<td>" . $row['follow'] . "</td>";
 	  						echo "<td>" . $row['useful'] . "</td>";
 
-	  						echo "<td><a title='".l('edit')."' href='?_r=record&&_v=edit&&rid=".
+	  						echo "<td><a title='".l('edit')."' href='?_r=record&_v=edit&rid=".
 	  							$row["rid"]."'>". utf8_substr($row['content'],0,20) . "</a></td>";
 
-	  					//	echo "<td><a href='?_v=detail&&rid=". $row["rid"]. 
+	  					//	echo "<td><a href='?_v=detail&rid=". $row["rid"]. 
 						//		"' target='_blank'>" . utf8_substr($row['content'],0,20) . "</a></td>";
 
 	  					//	echo "<td>" . $row['created'] . "</td>";
 
-	  						echo "<td><a href='?_v=detail&&rid=". $row["rid"]. 
+	  						echo "<td><a href='?_v=detail&rid=". $row["rid"]. 
 								"' target='_blank'>". l('see') ."</a>";
-	  						//	echo "<td><a href='?_r=record&&_v=edit&&rid=".
+	  						//	echo "<td><a href='?_r=record&_v=edit&rid=".
 	  						//	$row["rid"]."'>". l('edit') ."</a></td>";
-	  					//	echo "<td><a href='?_r=record&&_a=del&&rid=".
+	  					//	echo "<td><a href='?_r=record&_a=del&rid=".
 	  					//		$row["rid"]."'>". l('delete') ."</a></td>";
 
 	  						echo "</tr>";
@@ -84,7 +84,7 @@
 				if ($t["pagenums"] > 0) {
 					for ($i=0; $i < $t["pagenums"]; $i++) {
 						$j = $i + 1;
-						echo "<span> <a href='?_r=record&&pagecurr=$j&&".$t["url"];
+						echo "<span> <a href='?_r=record&pagecurr=$j&".$t["url"];
 						echo "'>$j</a> </span>";
 					}
 				}
@@ -108,7 +108,7 @@
 <?php if ($t['_v'] == 'edit') { ?>
 
 	<div class="edit-form">
-		<form action="?_r=record&&_v=<?= $t['_v'] ?>&&_a=<?= $t['_a'] ?>" method="post" >
+		<form action="?_r=record&_v=<?= $t['_v'] ?>&_a=<?= $t['_a'] ?>" method="post" >
 			<ul>
 				<li><label><?= l('content'); ?></label></li>
 				<li><textarea name="content" class="record_text file_input" ><?= $t['content'] ?></textarea></li>
@@ -165,10 +165,10 @@
 						<input type="text" name="useful" class="w50" value="<?= $t['useful'] ?>" />
 					</li>
 					<li>
-	  					<a href="?_r=record&&_a=keepit&&rid=<?=$t['rid']; ?>">
+	  					<a href="?_r=record&_a=keepit&rid=<?=$t['rid']; ?>">
 							<button > <?= l('keepit'); ?> </button>
 						</a>
-	  					<a href="?_r=record&&_a=del&&rid=<?=$t['rid']; ?>">
+	  					<a href="?_r=record&_a=del&rid=<?=$t['rid']; ?>">
 							<button > <?= l('delete'); ?> </button>
 						</a>
 					</li>

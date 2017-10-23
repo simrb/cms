@@ -8,7 +8,7 @@
 				'head'	=>	array(l('records') =>	'img/6.png'),
 				'body'	=>	array(
 					l('record list')=>	'?_r=record',
-					l('add')		=>	'?_r=record&&_v=edit',
+					l('add')		=>	'?_r=record&_v=edit',
 				),
 			),
 			array(
@@ -16,16 +16,16 @@
 				'body'	=>	array(
 					l('category')	=>	'?_r=category',
 					l('file')		=>	'?_r=file',
-					l('info')		=>	'?_r=admin&&_v=info',
+					l('info')		=>	'?_r=admin&_v=info',
 				),
 			),
 			array(
 				'head'	=>	array(l('users') =>	'img/8.png'),
 				'body'	=>	array(
 					l('user list')		=>	'?_r=user',
-					l('status')		=>	'?_r=user&&_v=status',
+					l('status')		=>	'?_r=user&_v=status',
 					l('front end')	=>	'?',
-					l('quit')		=>	'?_r=user&&_a=logout',
+					l('quit')		=>	'?_r=user&_a=logout',
 				),
 			),
 		),
