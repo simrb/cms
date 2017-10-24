@@ -12,17 +12,12 @@
 
 
 			<div id="header">
-				<a href="?"><h1><?= $t['web_header'] ?></h1></a>
-				<div class="show-menu">
-					<?php include_once(path_tmp('front/menu')); ?>
-				</div>
+				<?php include_once(path_tmp('front/header')); ?>
 			</div>
 
 			<div id="bodyer">
-
 				<p id="msg"><?= $t["msg"] ?></p>
 				<?php include_once(path_tmp($tpl_name)); ?>
-				
 			</div>
 
 			<div id="footer">

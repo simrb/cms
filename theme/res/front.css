@@ -26,6 +26,8 @@ body { background-color: #e8ede0; }
 .menu_item .menu_hl { background-color: #b4bdb4; }
 .edit-form .addfile { width: 98%; }
 
+.top-bar a { margin-left: 5px; }
+#header h1 { margin: 10px 0; }
 
 .show-list h3 { margin: 0; padding: 0; }
 .show-list p { margin: 5px 0 15px 0; }

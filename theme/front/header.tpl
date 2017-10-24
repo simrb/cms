@@ -1,7 +1,11 @@
-<?php
+<div class="top-bar right">
+	<a href="?_v=detail&rid=1" target="_blank"><?= l('about us'); ?></a>
+	<a href="?_v=detail&rid=1" target="_blank"><?= l('register'); ?></a>
+</div>
 
-	// parse the menu 
-	if (isset($t["category_kv"])) {
+<a href="?"><h1><?= $t['web_header'] ?></h1></a>
+
+<div class="show-menu"> <?php if (isset($t["category_kv"])) {
 
 		echo '<div class="menu_item"><ul>';
 
@@ -18,6 +22,5 @@
 		echo '</ul></div>';
 	}
 
-
-?>
+?> </div>
 
