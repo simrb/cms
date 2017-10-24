@@ -27,7 +27,7 @@
 
 			<div id="footer">
 				<i>
-					<?= $t['web_footer'] ?> <?= $t['web_name'] ?>
+					<?= $t['web_footer'] ?> <?= $t['web_name'] ?> <?= $GLOBALS['cfg']['version'] ?>
 					<a href="?_v=detail&rid=1" target="_blank"><?= l('about us'); ?></a>
 				</i>
 			</div>
