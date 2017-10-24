@@ -147,7 +147,4 @@ CREATE TABLE `user_status` (
   PRIMARY KEY  (`usid`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `user_status`
---
 

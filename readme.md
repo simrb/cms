@@ -2,6 +2,7 @@ About
 ============
 
 Just a CMS by php programming language, we dedicate to simplicity and rudeness.
+This is a pretty pure version.
 
 
 
