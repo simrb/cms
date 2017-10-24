@@ -1,6 +1,6 @@
 <div class="top-bar right">
-	<a href="?_v=detail&rid=1" target="_blank"><?= l('about us'); ?></a>
-	<a href="?_v=detail&rid=1" target="_blank"><?= l('register'); ?></a>
+	<a href="?_v=detail&rid=1" ><?= l('about us'); ?></a>
+	<a href="?_v=register" ><?= l('register'); ?></a>
 </div>
 
 <a href="?"><h1><?= $t['web_header'] ?></h1></a>

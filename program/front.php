@@ -139,4 +139,18 @@ if ($t['_v'] == "addpost") {
 	tmp("front/add", $t);
 }
 
+
+//view: register
+if ($t['_v'] == "register") {
+
+	$t["url"] 			=	"";
+	$t['_a'] 			=	"register";
+	$t["cid"]			=	isset($_GET["cid"]) ? $_GET["cid"] : 1 ;
+
+	$t['web_title'] 	= 	user_log('web_title');
+	
+	//tmp("front/add", $t);
+}
+
+
 ?>
