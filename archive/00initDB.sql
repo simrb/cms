@@ -1,7 +1,5 @@
 -- 
--- 1, change the cms_db, cms_user, cms_pawd, as you want
--- 2, and execute the file with root user
---
+-- change the cms_db, cms_user, cms_pawd, as you want
 --
 
 create database cms_db;
@@ -15,6 +13,9 @@ use cms_db;
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
+
+
+-- --------------------------------------------------------
 -- --------------------------------------------------------
 
 --
@@ -52,9 +53,6 @@ CREATE TABLE `file` (
   PRIMARY KEY  (`fid`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `file`
---
 
 
 -- --------------------------------------------------------
@@ -147,7 +145,13 @@ CREATE TABLE `user_status` (
   PRIMARY KEY  (`usid`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `user_status`
---
 
+
+
+CREATE TABLE `record_log` (
+  `rlid` int(11) NOT NULL auto_increment,
+  `rid` int(11) NOT NULL,
+  `ukey` varchar(30) NOT NULL,
+  `uval` varchar(50) NOT NULL,
+  PRIMARY KEY  (`rlid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;

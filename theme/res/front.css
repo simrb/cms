@@ -9,6 +9,7 @@ textarea { width: 98%; }
 @media all and (min-width: 400px){
 	.ui-block-a, .ui-block-c { width: 2%; }
 	.ui-block-b { width: 95%; }
+	.show-detail img { width: 80%;  }
 }
 
 /* Second breakpoint at 800px */
@@ -22,6 +23,8 @@ textarea { width: 98%; }
 body { background-color: #e8ede0; }
 #header a, #bodyer a, #footer a { color: #374b37; }
 #msg { background-color: #9dc7de; }
+.menu_item .menu_hl { background-color: #b4bdb4; }
+.edit-form .addfile { width: 98%; }
 
 
 .show-list h3 { margin: 0; padding: 0; }
@@ -31,6 +34,11 @@ body { background-color: #e8ede0; }
 
 .show-list-body { margin-bottom: 11px; }
 
-.show-detail pre img { width: 100%; }
+.show-detail img { width: 70%;  }
+.show-detail .show-detail-img { margin-bottom: 10px; text-align: left; }
 
 .show-pagination span { margin-right: 5px; }
+
+.show-menu { height: 33px; }
+.show-menu .left { margin-right: 10px; }
+.show-menu .right { margin-left: 10px; }

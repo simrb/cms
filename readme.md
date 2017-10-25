@@ -1,7 +1,7 @@
 About
 ============
 
-Just a CMS by php programming language, we dedicate to simplicity and rudeness.
+A simple blog.
 
 
 

@@ -13,6 +13,9 @@
 
 			<div id="header">
 				<a href="?"><h1><?= $t['web_header'] ?></h1></a>
+				<div class="show-menu">
+					<?php include_once(path_tmp('front/menu')); ?>
+				</div>
 			</div>
 
 			<div id="bodyer">
@@ -24,7 +27,7 @@
 
 			<div id="footer">
 				<i>
-					<?= $t['web_footer'] ?> <?= $t['web_name'] ?>
+					<?= $t['web_footer'] ?> <?= $t['web_name'] ?> <?= $GLOBALS['cfg']['version'] ?>
 					<a href="?_v=detail&rid=1" target="_blank"><?= l('about us'); ?></a>
 				</i>
 			</div>

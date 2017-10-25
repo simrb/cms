@@ -1,4 +1,5 @@
-== Change
+v1.1, by linyu deng, at 10/25,2017
+a blog
 
-v1.0.0, by linyu deng, at 11/11,2016
-initialing this project, the first version is builded.
+v1.0, by linyu deng, at 11/11,2016
+initialing this project, the first version is built.
