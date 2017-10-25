@@ -146,8 +146,6 @@ CREATE TABLE `user_status` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 
-
-
 CREATE TABLE `record_log` (
   `rlid` int(11) NOT NULL auto_increment,
   `rid` int(11) NOT NULL,
@@ -155,3 +153,6 @@ CREATE TABLE `record_log` (
   `uval` varchar(50) NOT NULL,
   PRIMARY KEY  (`rlid`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+
+

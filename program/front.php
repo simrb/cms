@@ -24,43 +24,6 @@ if ($t['_a'] == "addcomment") {
 }
 
 
-//act: addpost
-if ($t['_a'] == "addpost") {
-	if (isset($_POST['cid']) and isset($_POST['content'])) {
-		
- 		$t["msg"] = user_allow_submit();
-		$t['msg'] = '';
-
-		if ($t["msg"] == '') {
-
-			// add record
-			$insert_id = sql_query(
-				"INSERT INTO record (
-				uid, cid, follow, content, created
-				) VALUES (
-				'". user_id() ."', '". $_POST["cid"] ."', 0,
-				'". $_POST["content"] ."', '". date("Y-m-d H:i:s") ."')", 1
-			);
-			$t["msg"] = l('submitted successfully');
-
-			// add upload
-			$t['_a'] = 'add';
-			$t['_v'] = '';
-			require_once('file.php');
-
-			// add upload log for record
-			$rid	= $insert_id;
-			sql_query("INSERT INTO record_log (rid, ukey, uval) VALUES ('". $rid .
-				"', 'img', '". $path ."');");
-
-		}
-
-	}
-
-	url_to( '?cid='. $_POST["cid"]);
-}
-
-
 //view: show
 if ($t['_v'] == "show") {
 
@@ -124,19 +87,6 @@ if ($t['_v'] == "detail") {
 
 		tmp("front/detail", $t);
 	}
-}
-
-
-//view: addpost
-if ($t['_v'] == "addpost") {
-
-	$t["url"] 			=	"";
-	$t['_a'] 			=	"addpost";
-	$t["cid"]			=	isset($_GET["cid"]) ? $_GET["cid"] : 1 ;
-
-	$t['web_title'] 	= 	user_log('web_title');
-	
-	tmp("front/add", $t);
 }
 
 ?>

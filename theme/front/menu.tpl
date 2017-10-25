@@ -11,10 +11,6 @@
 				$cid .'" >'. $name .'</a></li>';
 		}
 
-		$hl = ('addpost' == $t['_v']) ? 'menu_hl' : '';
-		echo '<li class="right '. $hl .'"><a href="?_v=addpost&cid='.
-			$t['cid'] .'">'.l('add post').'</a></li>';
-
 		echo '</ul></div>';
 	}
 
