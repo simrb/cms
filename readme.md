@@ -1,7 +1,7 @@
 About
 ============
 
-A simple blog.
+It is a cms system, base on the master version, add a menu to front page. it looks like a blog.
 
 
 

@@ -26,7 +26,7 @@ $t = array(
 	// default page info
 	'web_title' 		=>	"A new site",
 	'web_header' 		=>	"NEW SITE",
-	'web_name' 			=>	"BLOG",
+	'web_name' 			=>	"CMS",
 	'web_des'			=>	'',
 	'web_kw'			=>	'',
 	'web_logo' 			=>	"",
