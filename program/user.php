@@ -3,17 +3,20 @@ $t['layout'] = 'admin/layout';
 
 //act: add
 if ($t['_a'] == "add") {
-	if (isset($_POST["username"])) {
-
-		sql_query("INSERT INTO user(username, password, level) 
-		VALUES ('". $_POST["username"] ."','". $_POST["password"] ."','". $_POST["level"] ."');");
-
-		$t["msg"] = l('added successfully');
-	} else {
-		$t["msg"] = l('failed to add');
-	}
+	$t["msg"] = user_add($_POST);
 }
 
+function user_add ($arr) {
+	$reval = l('failed to add');
+	if (isset($arr["username"])) {
+		sql_query("INSERT INTO user(username, password, level) 
+			VALUES ('". $arr["username"] ."','". $arr["password"] .
+			"','". $arr["level"] ."');"
+		);
+		$reval = l('added successfully');
+	}
+	return $reval;
+}
 
 //act: update
 if ($t['_a'] == "update") {
@@ -62,17 +65,25 @@ if ($t['_a'] == "logout") {
 }
 
 
-//act: login
+//act: login and register
 if ($t['_a'] == "login") {
-	// default msg
 	$t["msg"] = l('failed to login, the username and password is not matched').
 		" <a href='".$GLOBALS["ucfg"]["user_login_page"]."'>". l('return') ."</a>";
 
 	if (isset($_POST["username"]) and isset($_POST["password"])) {
+		// user register
+		if (isset($_POST["firstime"]) and $_POST["firstime"] == 'yes') {
+			$arr = $_POST;
+			$arr['level'] = 1;
+			$t["msg"] = user_add($arr);
+		}
+
+		// user login
 		if (user_login($_POST['username'], $_POST['password'])) {
 			url_to(url_referer());
 		}
 	}
+
 	out($t["msg"], $t);
 }
 
