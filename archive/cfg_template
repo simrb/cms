@@ -12,7 +12,7 @@ $cfg = array(
 	'def_access'		=>	'access.php',	// default access file control
 	'def_lang'			=>	'en',
 	'def_pagesize'		=>	20,
-	'version'			=>	'v1.1',
+	'version'			=>	'v1.0.0',
 );
 
 
@@ -30,7 +30,7 @@ $t = array(
 	'web_des'			=>	'',
 	'web_kw'			=>	'',
 	'web_logo' 			=>	"",
-	'web_footer'		=>	"Copyleft © 2016-2017",
+	'web_footer'		=>	"Copyleft © 2016-",
 );
 
 
