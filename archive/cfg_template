@@ -54,7 +54,7 @@ $ucfg = array(
 );
 
 
-if ($t['def_mode'] == 'test') {
+if ($cfg['def_mode'] == 'test') {
 	ini_set("display_errors", "On");
 	error_reporting(E_ALL | E_STRICT);
 }
