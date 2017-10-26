@@ -22,7 +22,7 @@
 
 			<div id="footer">
 				<i>
-					<?= $t['web_footer'] ?> <?= $t['web_name'] ?> <?= $GLOBALS['cfg']['version'] ?>
+					<?= $t['web_footer'].date('Y') ?> <?= $t['web_name'] ?> <?= $GLOBALS['cfg']['version'] ?>
 				</i>
 			</div>
 
