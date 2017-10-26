@@ -58,7 +58,7 @@
 'username'      =>  '用户名称' ,
 'password'      =>  '用户密码' ,
 'role'      =>  '角色' ,
-'user login'      =>  '用户 登录' ,
+'user login'      =>  '用户登录' ,
 'enter'      =>  '进入' ,
 'file name'      =>  '文件 名称' ,
 'path'      =>  '路径' ,
@@ -76,7 +76,10 @@
 'see'      =>  '查看' ,
 //'keepit'      =>  '暂存' ,
 'keepit'      =>  '回收站' ,
-
+'settings'	=>  '设置' ,
+'save'	=>  '保存' ,
+'this is first time login, the account will be created automatically'	=>  '如果这是第一次登录，我们会为你自动创建用户名和密码' ,
+'user info'	=>  '用户信息' ,
 
 
 );?>

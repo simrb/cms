@@ -74,9 +74,12 @@
 'number'      =>  '' ,
 'add post'      =>  '' ,
 'no content in here'      =>  '' ,
-'see'      =>  '' ,
-'keepit'      =>  'trash' ,
-
+'see'		=>  '' ,
+'keepit'	=>  'trash' ,
+'settings'	=>  '' ,
+'save'	=>  '' ,
+'this is first time login, the account will be created automatically'	=>  '' ,
+'user info'	=>  '' ,
 
 
 );?>
