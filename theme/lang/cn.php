@@ -80,6 +80,7 @@
 'save'	=>  '保存' ,
 'this is first time login, the account will be created automatically'	=>  '如果这是第一次登录，我们会为你自动创建用户名和密码' ,
 'user info'	=>  '用户信息' ,
+'logout'	=>  '退出' ,
 
 
 );?>
