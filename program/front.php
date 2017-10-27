@@ -141,12 +141,31 @@ if ($t['_v'] == "addpost") {
 
 //view: settings
 if ($t['_v'] == "settings") {
+	user_is_login ();
 
 	$t["url"] 			=	"";
 	$t['_a'] 			=	"settings";
 	$t["cid"]			=	0 ;
-	
-	user_is_login ();
+
+	$t['nickname1'] = $t['contact1'] = $t['intro1'] = '';
+
+	$uid = user_id();
+	$res = sql_query("SELECT * FROM user_log WHERE uid = ". $uid);
+
+	if ($res) {
+		while ($row = mysql_fetch_row($res)) {	
+			if ($row[2] == 'nickname') {
+				$t['nickname1'] = $row[3];
+			} elseif ($row[2] == 'contact') {
+				$t['contact1'] = $row[3];
+			} elseif ($row[2] == 'intro') {
+				$t['intro1'] = $row[3];
+			}
+		}
+	}
+
+
+
 	tmp("front/settings", $t);
 }
 
