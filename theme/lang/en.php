@@ -81,6 +81,9 @@
 'this is first time login, the account will be created automatically'	=>  '' ,
 'user info'	=>  '' ,
 'logout'	=>  '' ,
+'nickname'	=>  '' ,
+'contact'	=>  '' ,
+'introduction'	=>  '' ,
 
 
 );?>

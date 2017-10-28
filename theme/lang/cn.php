@@ -81,6 +81,9 @@
 'this is first time login, the account will be created automatically'	=>  '如果这是第一次登录，我们会为你自动创建用户名和密码' ,
 'user info'	=>  '用户信息' ,
 'logout'	=>  '退出' ,
+'nickname'	=>  '显示昵称' ,
+'contact'	=>  '联系方式' ,
+'introduction'	=>  '个人简述' ,
 
 
 );?>
