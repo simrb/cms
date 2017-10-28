@@ -5,7 +5,70 @@ $t["cid"]			= isset($_GET["cid"]) ? $_GET["cid"] : 1 ;
 $t['web_title'] 	= 	user_log('web_title');
 
 
+// act: settings
 if ($t['_a'] == "settings") {
+	
+	// update password
+	if (isset($_POST['password']) and $_POST['password'] != '**') {
+		sql_query("UPDATE user SET 
+			password = '". $_POST["password"] ."' 
+			WHERE uid = '".user_id()."';"
+		);
+	}
+
+	// change nickname
+	if (isset($_POST['nickname1']) and isset($_POST['nickname1']) 
+	and ($_POST['nickname1'] != $_POST['nickname2'])) {
+		// insert
+		if ($_POST['nickname2'] == '') {
+			sql_query("INSERT INTO user_log (uid, ukey, uval) VALUES (
+				'". user_id() ."', 'nickname', '". $_POST["nickname1"] ."'
+			);");
+
+		// update
+		} else {
+			sql_query("UPDATE user_log SET 
+				uval = '". $_POST["nickname1"] ."' 
+				WHERE uid = '".user_id()."' AND ukey = 'nickname';"
+			);
+		}
+	}
+
+	// change contact
+	if (isset($_POST['contact1']) and isset($_POST['contact1']) 
+	and ($_POST['contact1'] != $_POST['contact2'])) {
+		// insert
+		if ($_POST['contact2'] == '') {
+			sql_query("INSERT INTO user_log (uid, ukey, uval) VALUES (
+				'". user_id() ."', 'contact', '". $_POST["contact1"] ."'
+			);");
+
+		// update
+		} else {
+			sql_query("UPDATE user_log SET 
+				uval = '". $_POST["contact1"] ."' 
+				WHERE uid = '".user_id()."' AND ukey = 'contact';"
+			);
+		}
+	}
+
+	// change introduction
+	if (isset($_POST['intro1']) and isset($_POST['intro1']) 
+	and ($_POST['intro1'] != $_POST['intro2'])) {
+		// insert
+		if ($_POST['intro2'] == '') {
+			sql_query("INSERT INTO user_log (uid, ukey, uval) VALUES (
+				'". user_id() ."', 'intro', '". $_POST["intro1"] ."'
+			);");
+
+		// update
+		} else {
+			sql_query("UPDATE user_log SET 
+				uval = '". $_POST["intro1"] ."' 
+				WHERE uid = '".user_id()."' AND ukey = 'intro';"
+			);
+		}
+	}
 
 }
 
@@ -78,7 +141,7 @@ if ($t['_v'] == "show") {
 	$pagestart			=	($pagecurr - 1)*$pagesize ;
 	$filenums			=	0;
 
-	$sql_str			= 	"SELECT * FROM record WHERE cid != 0 and follow = 0";
+	$sql_str			= 	"SELECT * FROM record WHERE cid != 0 AND follow = 0";
 	$sql_str			.=	$t["cid"] > 0 ? (" and cid = ". $t["cid"]) : "";
 	$res 				= 	sql_query($sql_str);
 	$filenums 			= 	mysql_num_rows($res);
@@ -101,7 +164,8 @@ if ($t['_v'] == "detail") {
 		$t["rid"]			= $_GET['rid'];
 		$t['url']			= '?_v=detail&rid=' . $t['rid'] . '&_a=addcomment';
 
-		$res = sql_query("SELECT content, cid, created, useful FROM record WHERE rid = ". $t["rid"] . " LIMIT 1");
+		$res = sql_query("SELECT content, cid, created, useful FROM record 
+							WHERE rid = ". $t["rid"] . " LIMIT 1");
 		if ($res = mysql_fetch_row($res)) {
 			// set head
 			$t['web_title'] = utf8_substr($res[0], 0, 30) . ' -- ' . user_log('web_header');
@@ -120,7 +184,8 @@ if ($t['_v'] == "detail") {
 			$t['record_cmt'] 	= sql_query($sql_str);
 
 			// set picture
-			$res = sql_query("SELECT uval FROM record_log WHERE rid = ". $t["rid"] . " and ukey = 'img' LIMIT 1");
+			$res = sql_query("SELECT uval FROM record_log WHERE rid = ". $t["rid"] 
+					. " AND ukey = 'img' LIMIT 1");
 			if ($res = mysql_fetch_row($res)) {
 				$t['record_img'] = $res[0];
 			}
@@ -163,8 +228,6 @@ if ($t['_v'] == "settings") {
 			}
 		}
 	}
-
-
 
 	tmp("front/settings", $t);
 }
