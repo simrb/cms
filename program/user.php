@@ -1,4 +1,5 @@
 <?php defined('ACCESS') or die('Access denied');
+
 $t['layout'] = 'admin/layout';
 
 //act: add
@@ -6,17 +7,6 @@ if ($t['_a'] == "add") {
 	$t["msg"] = user_add($_POST);
 }
 
-function user_add ($arr) {
-	$reval = l('failed to add');
-	if (isset($arr["username"])) {
-		sql_query("INSERT INTO user(username, password, level) 
-			VALUES ('". $arr["username"] ."','". $arr["password"] .
-			"','". $arr["level"] ."');"
-		);
-		$reval = l('added successfully');
-	}
-	return $reval;
-}
 
 //act: update
 if ($t['_a'] == "update") {
@@ -104,14 +94,22 @@ if ($t['_v'] == "login") {
 
 //view: show
 if ($t['_v'] == "show") {
-	$t["user_res"] = sql_query("SELECT * FROM user;");
+	
+	$sql = "SELECT * FROM user";
+	if (isset($_POST['select_key']) and isset($_POST['select_val'])) {
+		$sql .= ' WHERE '. $_POST['select_key'] . ' = "'. $_POST['select_val'] .'";';
+	} else {
+		$sql .= ' ORDER BY uid DESC LIMIT 10;';
+	}
+
+	$t["user_res"] = sql_query($sql);
 	tmp("admin/user", $t);
 }
 
 
 //view: status
 if ($t['_v'] == "status") {
-	$t["user_res"] = sql_query("SELECT * FROM user_status;");
+	$t["user_res"] = sql_query("SELECT * FROM user_status ORDER BY usid DESC LIMIT 20;");
 	tmp("admin/user_status", $t);
 }
 
@@ -140,5 +138,17 @@ if ($t['_v'] == "edit") {
 	tmp("admin/user", $t);
 }
 
+
+function user_add ($arr) {
+	$reval = l('failed to add');
+	if (isset($arr["username"])) {
+		sql_query("INSERT INTO user(username, password, level) 
+			VALUES ('". $arr["username"] ."','". $arr["password"] .
+			"','". $arr["level"] ."');"
+		);
+		$reval = l('added successfully');
+	}
+	return $reval;
+}
 
 ?>

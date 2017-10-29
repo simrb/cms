@@ -1,5 +1,18 @@
 <?php if ($t['_v'] == 'show') { ?>
 
+	<div class="show-query">
+		<form action="?_r=user" method="post">
+			<input type="search" class="search" name="select_val" />
+			<select name="select_key" class="selectmenu">
+				<option value="uid" ><?= l('user id'); ?></option>
+				<option value="username" ><?= l('username'); ?></option>
+				<option value="level" ><?= l('level'); ?></option>
+			</select>
+			<input type="submit" class="" value="<?= l('query'); ?>" />
+
+		</form>
+	</div>
+
 	<div class="show-table">
 		<table>
 			<thead>
@@ -42,10 +55,6 @@
 			<a href="?_r=user&_v=edit"><input type="button" value="<?= l('add'); ?>" class="bgwt" /></a>
 		</form>
 	</div>
-
-	</br>
-	<p class="left"><?= l('current user is'); ?> <?= user_name() ?> </p>
-
 
 <?php } ?>
 
