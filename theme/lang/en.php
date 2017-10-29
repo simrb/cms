@@ -16,6 +16,7 @@
 'a error in removing file'      =>  '' ,
 'no result in quering'      =>  '' ,
 'welcome, dear '      =>  '' ,
+'dear'      =>  '' ,
 'records'      =>  '' , 
 'record list'      =>  '' ,
 'add'      =>  '' ,
@@ -54,7 +55,6 @@
 'follow'      =>  '' ,
 'name'      =>  '' ,
 'level'      =>  '' ,
-'current user is'      =>  '' ,
 'username'      =>  '' ,
 'password'      =>  '' ,
 'role'      =>  '' ,
@@ -84,6 +84,7 @@
 'nickname'	=>  '' ,
 'contact'	=>  '' ,
 'introduction'	=>  '' ,
+'menber'	=>  '' ,
 
 
 );?>

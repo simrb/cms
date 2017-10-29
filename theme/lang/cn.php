@@ -16,6 +16,7 @@
 'a error in removing file'      =>  '移除文件时出现一个错误' ,
 'no result in quering'      =>  '没有查询结果' ,
 'welcome, dear '      =>  '欢迎 亲爱的' ,
+'dear'      =>  '亲爱的' ,
 'records'      =>  '记录' , 
 'record list'      =>  '列表' ,
 'add'      =>  '添加' ,
@@ -54,7 +55,6 @@
 'follow'      =>  '跟随' ,
 'name'      =>  '名称' ,
 'level'      =>  '等级' ,
-'current user is'      =>  '当前用户是' ,
 'username'      =>  '用户名称' ,
 'password'      =>  '用户密码' ,
 'role'      =>  '角色' ,
@@ -84,6 +84,7 @@
 'nickname'	=>  '显示昵称' ,
 'contact'	=>  '联系方式' ,
 'introduction'	=>  '个人简述' ,
+'menber'	=>  '会员' ,
 
 
 );?>
