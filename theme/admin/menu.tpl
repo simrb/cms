@@ -24,8 +24,8 @@
 				'body'	=>	array(
 					l('user list')		=>	'?_r=user',
 					l('status')		=>	'?_r=user&_v=status',
-					l('front end')	=>	'?',
-					l('quit')		=>	'?_r=user&_a=logout',
+				//	l('front end')	=>	'?',
+				//	l('quit')		=>	'?_r=user&_a=logout',
 				),
 			),
 		),
