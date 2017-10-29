@@ -1,18 +1,20 @@
 <?php defined('ACCESS') or die('Access denied');
 
+// commom
+$uid				= user_id();
 $t["category_kv"] 	= data_fetch_kv("category", "cid", "name");
 $t["cid"]			= isset($_GET["cid"]) ? $_GET["cid"] : 1 ;
-$t['web_title'] 	= 	user_log('web_title');
+$t['web_title'] 	= user_log('web_title');
 
 
 // act: settings
 if ($t['_a'] == "settings") {
-	
+
 	// update password
 	if (isset($_POST['password']) and $_POST['password'] != '**') {
 		sql_query("UPDATE user SET 
 			password = '". $_POST["password"] ."' 
-			WHERE uid = '".user_id()."';"
+			WHERE uid = '".$uid."';"
 		);
 	}
 
@@ -20,16 +22,17 @@ if ($t['_a'] == "settings") {
 	if (isset($_POST['nickname1']) and isset($_POST['nickname1']) 
 	and ($_POST['nickname1'] != $_POST['nickname2'])) {
 		// insert
-		if ($_POST['nickname2'] == '') {
+		$res = sql_query("SELECT uval FROM user_log WHERE uid = ". $uid ." AND ukey = 'nickname';");
+		if (mysql_num_rows($res) == 0) {
 			sql_query("INSERT INTO user_log (uid, ukey, uval) VALUES (
-				'". user_id() ."', 'nickname', '". $_POST["nickname1"] ."'
+				'". $uid ."', 'nickname', '". $_POST["nickname1"] ."'
 			);");
 
 		// update
 		} else {
 			sql_query("UPDATE user_log SET 
 				uval = '". $_POST["nickname1"] ."' 
-				WHERE uid = '".user_id()."' AND ukey = 'nickname';"
+				WHERE uid = '".$uid."' AND ukey = 'nickname';"
 			);
 		}
 	}
@@ -38,16 +41,17 @@ if ($t['_a'] == "settings") {
 	if (isset($_POST['contact1']) and isset($_POST['contact1']) 
 	and ($_POST['contact1'] != $_POST['contact2'])) {
 		// insert
-		if ($_POST['contact2'] == '') {
+		$res = sql_query("SELECT uval FROM user_log WHERE uid = ". $uid ." AND ukey = 'contact';");
+		if (mysql_num_rows($res) == 0) {
 			sql_query("INSERT INTO user_log (uid, ukey, uval) VALUES (
-				'". user_id() ."', 'contact', '". $_POST["contact1"] ."'
+				'". $uid ."', 'contact', '". $_POST["contact1"] ."'
 			);");
 
 		// update
 		} else {
 			sql_query("UPDATE user_log SET 
 				uval = '". $_POST["contact1"] ."' 
-				WHERE uid = '".user_id()."' AND ukey = 'contact';"
+				WHERE uid = '".$uid."' AND ukey = 'contact';"
 			);
 		}
 	}
@@ -56,16 +60,17 @@ if ($t['_a'] == "settings") {
 	if (isset($_POST['intro1']) and isset($_POST['intro1']) 
 	and ($_POST['intro1'] != $_POST['intro2'])) {
 		// insert
-		if ($_POST['intro2'] == '') {
+		$res = sql_query("SELECT uval FROM user_log WHERE uid = ". $uid ." AND ukey = 'intro';");
+		if (mysql_num_rows($res) == 0) {
 			sql_query("INSERT INTO user_log (uid, ukey, uval) VALUES (
-				'". user_id() ."', 'intro', '". $_POST["intro1"] ."'
+				'". $uid ."', 'intro', '". $_POST["intro1"] ."'
 			);");
 
 		// update
 		} else {
 			sql_query("UPDATE user_log SET 
 				uval = '". $_POST["intro1"] ."' 
-				WHERE uid = '".user_id()."' AND ukey = 'intro';"
+				WHERE uid = '".$uid."' AND ukey = 'intro';"
 			);
 		}
 	}
@@ -73,7 +78,7 @@ if ($t['_a'] == "settings") {
 }
 
 
-//act: add
+// act: add
 if ($t['_a'] == "addcomment") {
 	if (isset($_POST['rid']) and isset($_POST['content'])) {
 		
@@ -83,7 +88,7 @@ if ($t['_a'] == "addcomment") {
 				"INSERT INTO record (
 				uid, cid, follow, content, created
 				) VALUES (
-				'". user_id() ."', '". $_POST["cid"] ."', '". $_POST["rid"] ."',
+				'". $uid ."', '". $_POST["cid"] ."', '". $_POST["rid"] ."',
 				'". $_POST["content"] ."', '". date("Y-m-d H:i:s") ."')"
 			);
 			$t["msg"] = l('submitted successfully');
@@ -93,7 +98,7 @@ if ($t['_a'] == "addcomment") {
 }
 
 
-//act: addpost
+// act: addpost
 if ($t['_a'] == "addpost") {
 	if (isset($_POST['cid']) and isset($_POST['content'])) {
 		
@@ -107,7 +112,7 @@ if ($t['_a'] == "addpost") {
 				"INSERT INTO record (
 				uid, cid, follow, content, created
 				) VALUES (
-				'". user_id() ."', '". $_POST["cid"] ."', 0,
+				'". $uid ."', '". $_POST["cid"] ."', 0,
 				'". $_POST["content"] ."', '". date("Y-m-d H:i:s") ."')", 1
 			);
 			$t["msg"] = l('submitted successfully');
@@ -130,7 +135,7 @@ if ($t['_a'] == "addpost") {
 }
 
 
-//view: show
+// view: show
 if ($t['_v'] == "show") {
 
 	// pagination
@@ -157,7 +162,7 @@ if ($t['_v'] == "show") {
 }
 
 
-//view: detail
+// view: detail
 if ($t['_v'] == "detail") {
 	if (isset($_GET['rid'])) {
 
@@ -196,7 +201,7 @@ if ($t['_v'] == "detail") {
 }
 
 
-//view: addpost
+// view: addpost
 if ($t['_v'] == "addpost") {
 	$t["url"] 			=	"";
 	$t['_a'] 			=	"addpost";
@@ -204,7 +209,7 @@ if ($t['_v'] == "addpost") {
 }
 
 
-//view: settings
+// view: settings
 if ($t['_v'] == "settings") {
 	user_is_login ();
 
@@ -212,9 +217,8 @@ if ($t['_v'] == "settings") {
 	$t['_a'] 			=	"settings";
 	$t["cid"]			=	0 ;
 
-	$t['nickname1'] = $t['contact1'] = $t['intro1'] = '';
+	$t['nickname1'] 	= $t['contact1'] = $t['intro1'] = '';
 
-	$uid = user_id();
 	$res = sql_query("SELECT * FROM user_log WHERE uid = ". $uid);
 
 	if ($res) {
