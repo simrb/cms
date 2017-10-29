@@ -2,9 +2,10 @@
 -- change the cms_db, cms_user, cms_pawd, as you want
 --
 
-create database cms_db;
+CREATE database IF NOT EXISTS cms_db Character SET UTF8;
+-- create database cms_db;
 
-create user 'cms_user'@'localhost' identified by 'cms_pawd';
+CREATE user 'cms_user'@'localhost' identified by 'cms_pawd';
 grant all privileges on cms_db.* to cms_user@localhost identified by 'cms_pawd';
 flush privileges;
 

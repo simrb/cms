@@ -10,8 +10,9 @@ use cms_db;
 -- Table structure for table `record_log`
 --
 
-DROP TABLE IF EXISTS `record_log`;
-CREATE TABLE `record_log` (
+-- DROP TABLE IF EXISTS `record_log`;
+-- CREATE TABLE `record_log` (
+CREATE TABLE IF NOT EXISTS `record_log` (
   `rlid` int(11) NOT NULL auto_increment,
   `rid` int(11) NOT NULL,
   `ukey` varchar(30) NOT NULL,
