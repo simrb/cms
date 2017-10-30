@@ -34,6 +34,24 @@
 
 			</tbody>
 		</table>
+
+		<p class="pagination">
+			<?php
+				if ($t["pagenums"] > 0) {
+					for ($i=0; $i < $t["pagenums"]; $i++) {
+						$j = $i + 1;
+						echo "<span> <a href='?_r=category&pagecurr=$j&".$t["url"];
+						echo "'>$j</a> </span>";
+					}
+				}
+
+			?>
+		</p>
+	</div>
+
+	<div class="pagination_label">
+		<span><?= l('record count'); ?>：<?=$t["res_num"] ?>, </span>
+		<span><?= l('current page'); ?>：<?=$t["pagecurr"] ?> / <?=$t["pagenums"] ?></span>
 	</div>
 
 	<div class="show-bar">
