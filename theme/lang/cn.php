@@ -63,7 +63,6 @@
 'file name'      =>  '文件 名称' ,
 'path'      =>  '路径' ,
 'time'      =>  '时间' ,
-'file count'      =>  '文件 数量' ,
 'about us'      =>  '关于' ,
 'say someing ...'      =>  '说些什么吗 ...' ,
 'you have login yet'     =>  '你已经登录了' ,
