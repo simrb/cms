@@ -1,6 +1,7 @@
 <?php if ($t['_v'] == 'show') { ?>
 
 	<div class="show-query">
+
 		<form action="?_r=user" method="post">
 			<input type="search" class="search" name="select_val" />
 			<select name="select_key" class="selectmenu">

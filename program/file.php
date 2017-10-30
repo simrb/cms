@@ -131,18 +131,15 @@ if ($t['_v'] == "show") {
 	$pagesize			=	$cfg["def_pagesize"] ;
 	$pagenums			=	0 ;
 	$pagestart			=	($pagecurr - 1)*$pagesize ;
-	$t["file_num"]		=	0;
+	$t["res_num"]		=	0;
 
 	$sql_str			= 	"SELECT * FROM file";
 	$t["file_res"] 		= 	sql_query($sql_str);
-	$t["file_num"] 		= 	mysql_num_rows($t["file_res"]);
+	$t["res_num"] 		= 	mysql_num_rows($t["file_res"]);
 
-	$pagenums		 	= 	ceil($t["file_num"]/$pagesize);
-	//echo $pagenums;
-	//echo $pagesize;
+	$pagenums		 	= 	ceil($t["res_num"]/$pagesize);
 	$sql_str 			.=	" ORDER BY fid DESC LIMIT $pagestart, $pagesize";
 	$t["file_res"] 		=	sql_query($sql_str);
-	
 
 	$t["pagecurr"]		=	$pagecurr;
 	$t["pagenums"]		=	$pagenums;

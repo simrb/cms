@@ -95,11 +95,12 @@ if ($t['_v'] == "login") {
 //view: show
 if ($t['_v'] == "show") {
 	
-	$sql = "SELECT * FROM user";
+	$sql 		= "SELECT * FROM user";
+	$pagesize 	= isset($_GET['pagesize']) ? $_GET['pagesize'] : 10;
 	if (isset($_POST['select_key']) and isset($_POST['select_val'])) {
 		$sql .= ' WHERE '. $_POST['select_key'] . ' = "'. $_POST['select_val'] .'";';
 	} else {
-		$sql .= ' ORDER BY uid DESC LIMIT 10;';
+		$sql .= ' ORDER BY uid DESC LIMIT '. $pagesize .';';
 	}
 
 	$t["user_res"] = sql_query($sql);

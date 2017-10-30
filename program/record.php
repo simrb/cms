@@ -76,7 +76,7 @@ if ($t['_v'] == "show") {
 	$pagesize			=	$cfg["def_pagesize"] ;
 	$pagenums			=	0 ;
 	$pagestart			=	($pagecurr - 1)*$pagesize ;
-	$t["record_num"]	=	0;
+	$t["res_num"]	=	0;
 
 	// act: query
 	if ($t['_a'] == "query") {
@@ -94,21 +94,10 @@ if ($t['_v'] == "show") {
 		$cid_vk				=	array_flip($t["category_kv"]);
 //		$sid_vk				=	array_flip($t["status_kv"]);
 
-
 		// replace the cid field name by its id, and ...
 		if ($select_field == "cid") {
 			$select_kw = array_key_exists($select_kw, $cid_vk) ? $cid_vk[$select_kw] : "" ;
 		}
-/*		if ($select_field == "sid") {
-			$select_kw = array_key_exists($select_kw, $sid_vk) ? $sid_vk[$select_kw] : "" ;
-		}*/
-
-/*		echo array_key_exists($select_kw, $cid_vk);
-		print_r($t["category_kv"]);
-		print_r($cid_vk);
-		exit;*/
-
-
 
 		if (($select_kw != "") and ($select_field != "")) {
 			if ($select_type == "exact") {
@@ -119,14 +108,14 @@ if ($t['_v'] == "show") {
 
 			//echo $sql_str;
 			$t["record_res"] =	sql_query($sql_str);
-			$t["record_num"] =	mysql_num_rows($t["record_res"]);
+			$t["res_num"] =	mysql_num_rows($t["record_res"]);
 
-			$pagenums		 =	ceil($t["record_num"]/$pagesize);
+			$pagenums		 =	ceil($t["res_num"]/$pagesize);
 			$sql_str 		.=	" ORDER BY rid DESC LIMIT $pagestart, $pagesize";
 			$t["record_res"] =	sql_query($sql_str);
 
 
-			if ($t["record_num"] < 1) {
+			if ($t["res_num"] < 1) {
 				$t["msg"] 	= l('no result in quering');
 			} else {
 				$t["url"] 	= "_a=query&select_kw=$select_kw_name&select_field=$select_field&select_type=$select_type";
@@ -143,11 +132,9 @@ if ($t['_v'] == "show") {
 	if (!isset($t["record_res"])) {
 		$sql_str			= "SELECT * FROM record";
 		$t["record_res"] 	= sql_query($sql_str);
-		$t["record_num"] 	= mysql_num_rows($t["record_res"]);
+		$t["res_num"] 		= mysql_num_rows($t["record_res"]);
 
-		$pagenums		 	= ceil($t["record_num"]/$pagesize);
-		//echo $pagenums;
-		//echo $pagesize;
+		$pagenums		 	= ceil($t["res_num"]/$pagesize);
 		$sql_str 			.=	" ORDER BY rid DESC LIMIT $pagestart, $pagesize";
 		$t["record_res"] 	=	sql_query($sql_str);
 	}

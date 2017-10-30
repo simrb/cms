@@ -49,7 +49,7 @@
 	</div>
 
 	<div class="pagination_label">
-		<span><?= l('file count'); ?>：<?=$t["file_num"] ?>, </span>
+		<span><?= l('record count'); ?>：<?=$t["res_num"] ?>, </span>
 		<span><?= l('current page'); ?>：<?=$t["pagecurr"] ?> / <?=$t["pagenums"] ?></span>
 	</div>
 
