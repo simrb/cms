@@ -78,9 +78,9 @@ CREATE TABLE `record` (
 --
 
 INSERT INTO `record` (`rid`, `uid`, `cid`, `follow`, `useful`, `content`, `created`) VALUES
-(1, 1, 1, 0, 0, 'About the cms.\r\r\nIt is a ranger of cms, we devote to simplicity, rudeness.', '2017-05-25 16:26:45'),
-(2, 1, 1, 1, 0, 'this is first comment.', '2017-05-25 16:28:14'),
-(3, 1, 1, 0, 0, 'About the project.\r\n\r\nThis is a cms created by php.', '2017-05-27 11:24:53');
+(1, 1, 1, 0, 0, 'About the cms.\r\r\nThis is a cms created by php, we devote to simplicity, rudeness.', '2017-05-25 16:26:45'),
+(2, 1, 1, 0, 0, 'About the user.', '2017-05-25 16:28:14'),
+(3, 1, 1, 2, 0, 'About the post.\r\n\r\nAllow post 50 records every day for each user.', '2017-05-27 11:24:53');
 
 -- --------------------------------------------------------
 
@@ -124,13 +124,15 @@ CREATE TABLE `user_log` (
 
 INSERT INTO `user_log` (`ulid`, `uid`, `ukey`, `uval`) VALUES
 (1, 1, 'open_comment', 'on'),
-(2, 1, 'last_post_ip', '127.0.0.1'),
-(3, 1, 'last_post_time', '02'),
-(4, 1, 'allow_post_by_guest', '50'),
+(2, 1, 'open_register', 'on'),
+(3, 1, 'last_post_ip', '127.0.0.1'),
+(4, 1, 'last_post_time', '1'),
 (5, 1, 'web_logo', '12345.jpg'),
-(6, 1, 'web_des', 'It is a ranger of cms, we devote to simplicity, rudeness.'),
+(6, 1, 'web_des', 'It is a cms, we devote to simplicity, rudeness.'),
 (7, 1, 'web_header', 'New site'),
-(8, 1, 'web_title', 'A ranger of cms');
+(8, 1, 'web_title', 'New site'),
+(9, 1, 'allow_post_by_guest', '50'),
+(10, 1, 'allow_post_by_user', '50');
 
 -- --------------------------------------------------------
 
