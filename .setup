@@ -110,6 +110,12 @@ if [ $Uinitpj = "yes" ] ; then
 		yum -y install php-mbstring
 	fi
 
+	# install the php-gd
+	my_file="/etc/php.d/gd.ini"
+	if [ ! -f "$my_file" ] ; then
+		yum -y install php-gd
+	fi
+
 	my_file="/etc/php.d/custom.ini"
 	if [ ! -f "$my_file" ] ; then
 		echo 'short_open_tag=On' > $my_file
