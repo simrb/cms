@@ -138,7 +138,7 @@ if [ $Uinitpj = "yes" ] ; then
 	my_dir="archive/upload"
 	if [ ! -d "$my_dir" ] ; then
 		mkdir $my_dir
-		chmod 777 $my_dir
+		chmod -R 777 $my_dir
 		echo "dir ${my_dir} is created"
 	fi
 
