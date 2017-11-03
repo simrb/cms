@@ -85,6 +85,7 @@ if ($t['_a'] == "add") {
 					break;
 				}  
 
+				process_file ($file['tmp_name']);
 				if(!move_uploaded_file($file['tmp_name'], PATH_UPLOAD.$path)){
 					$t["msg"] = l('a error in removing file');
 					break;
@@ -180,6 +181,29 @@ function get_upload_files () {
     return $files;
 }
 
+
+// process file
+function process_file ($path) {
+
+	$image	= imagecreatefromstring(file_get_contents($path));
+	$exif	= exif_read_data($path);
+	if(!empty($exif['Orientation'])) {
+		switch($exif['Orientation']) {
+			case 8:
+				$image = imagerotate($image,90,0);
+				break;
+			case 3:
+				$image = imagerotate($image,180,0);
+				break;
+			case 6:
+				$image = imagerotate($image,-90,0);
+				break;
+		}
+	}
+
+	//$image = stream_context_create(array($image));
+	file_put_contents($path, $image);
+}
 
 
 ?>
