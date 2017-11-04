@@ -21,15 +21,22 @@ if you have an existed database, just configure the file `cfg.php` for connectin
 
 
 
-Backup
+Migrating
 ============
 
-1 backup the dir archive/upload, such as
+1 backup your db, such as
 
-	# cp -r archive/upload ~/upload_bak
+	# mysqldump --database cms_db > archive/mydb_bak_201708.sql
 
-2 backup your db, such as
+2 backup the dir, such as
 
-	# mysqldump --database cms_db > mydb_bak.sql
+	# tar -cvf mydoc.tar mydoc/
+
+untar
+
+	# tar -xvf mydoc.tar
+
+
+
 
 
