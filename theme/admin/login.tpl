@@ -19,11 +19,12 @@
 
 			<li>
 				<br/>
-				<span>* </span>
-				<label for="firstime">
+				
+				<label for="firstime"> <span>* </span>
 					<?= l('register account, please check here') ?>
+					<input id="firstime" type="checkbox" name="firstime" value="yes" />
 				</label>
-				<input id="firstime" type="checkbox" name="firstime" value="yes" />
+				
 			</li>
 
 			<li>
