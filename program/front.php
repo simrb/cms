@@ -192,7 +192,9 @@ if ($t['_v'] == "detail") {
 			$res = sql_query("SELECT uval FROM record_log WHERE rid = ". $t["rid"] 
 					. " AND ukey = 'img' LIMIT 1");
 			if ($res = mysql_fetch_row($res)) {
-				$t['record_img'] = $res[0];
+				if (!empty($res[0])) {
+					$t['record_img'] = $res[0];
+				}
 			}
 		}
 
