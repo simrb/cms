@@ -32,7 +32,7 @@
 			<li><label><?= l('introduction'); ?></label></li>
 			<li>
 				<textarea name="intro1" ><?= $t['intro1']; ?></textarea>
-				<textarea name="intro2" class="hide" ><?= $t['intro1']; ?></textarea>
+				<textarea name="intro2" class="hide" style="display:none;"><?= $t['intro1']; ?></textarea>
 			</li>
 
 			<li>
