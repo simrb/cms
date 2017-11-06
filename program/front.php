@@ -1,5 +1,8 @@
 <?php defined('ACCESS') or die('Access denied');
 
+$t['cid'] 			= 0;
+$t["category_kv"] 	= data_fetch_kv("category", "cid", "name");
+
 
 //act: add
 if ($t['_a'] == "addcomment") {
@@ -21,12 +24,12 @@ if ($t['_a'] == "addcomment") {
 }
 
 
-//view: list, show
+//view: show
 if ($t['_v'] == "show") {
 
 	// pagination
 	$t["url"] 			=	"";
-	$t["cid"]			=	isset($_GET["cid"]) ? $_GET["cid"] : 0 ;
+	$t["cid"]			=	isset($_GET["cid"]) ? $_GET["cid"] : 1 ;
 	$pagecurr			=	(isset($_GET["pagecurr"]) and $_GET["pagecurr"]>1) ? $_GET["pagecurr"] : 1 ;
 	$pagesize			=	9 ;
 	$pagenums			=	0 ;
@@ -53,27 +56,37 @@ if ($t['_v'] == "show") {
 //view: detail
 if ($t['_v'] == "detail") {
 	if (isset($_GET['rid'])) {
+
 		$t["rid"]			= $_GET['rid'];
 		$t['url']			= '?_v=detail&rid=' . $t['rid'] . '&_a=addcomment';
 
-		// web head 
-		$res = sql_query("SELECT content, cid FROM record WHERE rid = ". $t["rid"] . " LIMIT 1");
+		$res = sql_query("SELECT content, cid, created, useful FROM record WHERE rid = ". $t["rid"] . " LIMIT 1");
 		if ($res = mysql_fetch_row($res)) {
+			// set head
 			$t['web_title'] = utf8_substr($res[0], 0, 30) . ' -- ' . user_log('web_header');
 			$t['web_des'] 	= utf8_substr($res[0], 0, 70);
 			$t['cid'] 		= $res[1];
-			//$t['web_des'] 	= utf8_substr($res[0], 0, 20);
+
+			// set body
+			$t['record_res'] = array();
+			$t['record_res']['content'] = $res[0];
+			$t['record_res']['created'] = $res[2];
+			$t['record_res']['useful'] 	= $res[3];
+
+			// set comment
+			$sql_str			= "SELECT rid, uid, content, useful, created FROM record 
+									WHERE follow = ". $t["rid"];
+			$t['record_cmt'] 	= sql_query($sql_str);
+
+			// set picture
+			$res = sql_query("SELECT uval FROM record_log WHERE rid = ". $t["rid"] . " and ukey = 'img' LIMIT 1");
+			if ($res = mysql_fetch_row($res)) {
+				$t['record_img'] = $res[0];
+			}
 		}
-
-		// web body
-		$sql_str			= "SELECT rid, uid, content, useful, created FROM record 
-							WHERE rid = ". $t["rid"] ." OR follow = ". $t["rid"];
-		$t['record_res'] 	= sql_query($sql_str);
-
 
 		tmp("front/detail", $t);
 	}
 }
-
 
 ?>

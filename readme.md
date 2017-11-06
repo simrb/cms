@@ -1,7 +1,7 @@
 About
 ============
 
-Just a CMS by php programming language, we dedicate to simplicity and rudeness.
+It is a cms system, base on the master version, add a menu to front page. it looks like a blog.
 
 
 

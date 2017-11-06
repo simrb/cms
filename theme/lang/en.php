@@ -72,6 +72,7 @@
 'you cannot post twice in a short time' => '',
 'category name'      =>  '' ,
 'number'      =>  '' ,
+'no content in here'      =>  '' ,
 'see'      =>  '' ,
 'keepit'      =>  'trash' ,
 

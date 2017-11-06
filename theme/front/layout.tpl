@@ -13,6 +13,9 @@
 
 			<div id="header">
 				<a href="?"><h1><?= $t['web_header'] ?></h1></a>
+				<div class="show-menu">
+					<?php include_once(path_tmp('front/menu')); ?>
+				</div>
 			</div>
 
 			<div id="bodyer">

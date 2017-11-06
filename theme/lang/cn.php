@@ -70,10 +70,10 @@
 'no privilege to access'     =>  '没有权限访问' ,
 'you cannot post twice in a short time' => '在短时间内你不能连接发两次',
 'category name'      =>  '分类名称' ,
+'no content in here'      =>  '亲，这里没有内容哦' ,
 'number'      =>  '数量' ,
 'see'      =>  '查看' ,
-//'keepit'      =>  '暂存' ,
-'keepit'      =>  '回收站' ,
+'keepit'      =>  '暂存' ,
 
 
 
