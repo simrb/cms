@@ -70,6 +70,7 @@ typing the option as what you want.
 EOF
 fi
 
+
 # create the index.html for each dir
 if [ $Uinitht = "yes" ] ; then
 	echo "initialing index page for each directory."
