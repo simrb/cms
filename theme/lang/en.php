@@ -77,13 +77,14 @@
 'keepit'	=>  'trash' ,
 'settings'	=>  '' ,
 'save'	=>  '' ,
-'this is first time login, the account will be created automatically'	=>  '' ,
+'register account, please check here'	=>  '' ,
 'user info'	=>  '' ,
 'logout'	=>  '' ,
 'nickname'	=>  '' ,
 'contact'	=>  '' ,
 'introduction'	=>  '' ,
 'menber'	=>  '' ,
+'register have to know'	=>  '' ,
 
 
 );?>

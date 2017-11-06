@@ -19,9 +19,20 @@
 
 			<li>
 				<br/>
-				<input id="firstime" type="checkbox" name="firstime" value="yes" />
-				<label for="firstime"><?= l('this is first time login, the account will be created automatically') ?></label>
+				
+				<label for="firstime"> <span>* </span>
+					<?= l('register account, please check here') ?>
+					<input id="firstime" type="checkbox" name="firstime" value="yes" />
+				</label>
+				
 			</li>
+
+			<li>
+				<span>* </span>
+				<a href="?_v=detail&rid=2" target="_blank">
+					<?= l('register have to know') ?></a>
+			</li>
+
 		</ul>
 
 	</form>
