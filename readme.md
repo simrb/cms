@@ -2,6 +2,7 @@ About
 ============
 
 Just a CMS by php programming language, we dedicate to make it to simplicity and rudeness.
+
 The base feature as following,
 
 	add the menu on front page,
@@ -46,10 +47,12 @@ untar
 History
 ============
 
-version, r2, by linyu deng, at 10/24,2017
-base on the last version, we add new functions that facing to web2.0, it let the user register.
+Ver.r2, by linyu deng, at 10/24,2017
 
-version, r1, by linyu deng, at 11/11,2016
+base on the last version, we add new feature that facing to web2.0, it let the user register.
+
+Ver.r1, by linyu deng, at 11/11,2016
+
 initialing the project, the first version is built.
 
 
