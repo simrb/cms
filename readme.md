@@ -1,7 +1,12 @@
 About
 ============
 
-Just a CMS by php programming language, we dedicate to simplicity and rudeness.
+Just a CMS by php programming language, we dedicate to make it to simplicity and rudeness.
+The base feature as following,
+
+	add the menu on front page,
+	allow upload picture in adding post,
+	allow the guest to register be user.
 
 
 
@@ -36,6 +41,23 @@ untar
 
 	# tar -xvf mydoc.tar
 
+
+
+History
+============
+
+version, r2, by linyu deng, at 10/24,2017
+base on the last version, we add new functions that facing to web2.0, it let the user register.
+
+version, r1, by linyu deng, at 11/11,2016
+initialing the project, the first version is built.
+
+
+
+License
+============
+
+[MIT](https://opensource.org/licenses/MIT)
 
 
 
