@@ -56,16 +56,18 @@ if [ ! `whoami` = "root" ] ; then
 fi
 
 if [ ! $1 ]; then
-	echo "================================================================"
-	echo "typing the option as what you want. "
-	echo "-e, initialling the project environment."
-	echo "-d, initialling the database."
-	echo "    -h, hostname"
-	echo "    -n, database"
-	echo "    -u, username"
-	echo "    -p, password"
-	echo "-i, increarsing the index.html file for each directory."
-	echo "..."
+cat << EOF
+================================================================
+typing the option as what you want.
+  -e, initialling the project environment.
+  -d, initialling the database.
+    -h, hostname
+    -n, database
+    -u, username
+    -p, password
+  -i, increarsing the index.html file for each directory.
+...
+EOF
 fi
 
 # create the index.html for each dir
