@@ -73,7 +73,6 @@ INSERT INTO `record` (`rid`, `uid`, `cid`, `follow`, `useful`, `content`, `creat
 CREATE TABLE `record_log` (
   `rlid` int(11) NOT NULL auto_increment,
   `uid` int(11) NOT NULL default '0',
-  `uid` int(11) NOT NULL,
   `ukey` varchar(50) NOT NULL,
   `uval` varchar(100) NOT NULL,
   PRIMARY KEY  (`rlid`)
