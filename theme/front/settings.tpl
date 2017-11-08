@@ -4,7 +4,7 @@
 		<ul>
 			<li>
 				<a href="?_r=user&_a=logout" class="right"><?= l('logout'); ?></a>
-				<h3><?= l('user info'); ?></h3>
+				<h3><?= l('base info'); ?></h3>
 			</li>
 
 			<li><label><?= l('username'); ?></label></li>
